@@ -9,18 +9,18 @@ var path = require('path');
 var dateString = (new Date()).toISOString().split('T')[0].replace(/-/g, '');
 
 try {
-    if (!fs.existsSync (path.resolve(__dirname, 'dist'))) {
-        fs.mkdirSync (path.resolve(__dirname, 'dist'));
+    if (!fs.existsSync (path.resolve(__dirname, 'docs'))) {
+        fs.mkdirSync (path.resolve(__dirname, 'docs'));
     }
-    fs.mkdirSync (path.resolve(__dirname, 'dist', dateString));
+    fs.mkdirSync (path.resolve(__dirname, 'docs', dateString));
 } catch (e) {
 
 }
 
-var files = fs.readdirSync (path.resolve(__dirname, 'dist'));
+var files = fs.readdirSync (path.resolve(__dirname, 'docs'));
 var dirs = [];
 for (var i = 0; i < files.length; i++) {
-    if (fs.lstatSync (path.resolve(__dirname, 'dist', files[i])).isDirectory()) {
+    if (fs.lstatSync (path.resolve(__dirname, 'docs', files[i])).isDirectory()) {
         dirs.push(files[i]);
     }
 }
@@ -44,7 +44,7 @@ if (dirs.length == 0) {
 var html = fs.readFileSync ('./rendered.html', 'utf8');
 html = html.replace (/%thisDate%/g, dateString);
 html = html.replace (/%prevDate%/g, dirs[0]);
-fs.writeFileSync (path.resolve (__dirname, 'dist', 'index.html'), html);
+fs.writeFileSync (path.resolve (__dirname, 'docs', 'index.html'), html);
 html = html.replace (/\.\/resources/g, '../resources');
-fs.writeFileSync (path.resolve(__dirname, 'dist', dateString, 'index.html'), html);
+fs.writeFileSync (path.resolve(__dirname, 'docs', dateString, 'index.html'), html);
 
