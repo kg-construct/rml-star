@@ -11,7 +11,8 @@ RDF-star [[RDF-star]] is an extension of the Resource Description Framework (RDF
 
 The RDF Mapping Language (RML) [[RML]] is a language for expressing mappings between heterogeneous data and RDF. In RML, rules can be expressed to iterate over a data source and refer to specific data within an iteration. Using these iterators and references, RML rules define how to express data in the data source in RDF.
 
-This document describes RML-star: an extension of RML that adds the generation of RDF-star triples to RML. 
+This document describes RML-star:
+an extension of RML that enables the generation of RDF-star triples with RML. 
 
 ### Conformance {#conformance}
 As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
