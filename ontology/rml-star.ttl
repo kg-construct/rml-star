@@ -17,15 +17,16 @@
 <http://semweb.mmlab.be/ns/rml> rdf:type owl:Ontology ;
                                  owl:imports rr: ;
                                  cc:license <http://creativecommons.org/licenses/by/3.0/> ;
-                                 dcterms:creator [ foaf:name "Anastasia Dimou"
+                                 dcterms:creator [ foaf:name "Miel Vander Sande"
                                                  ] ,
-                                                 [ foaf:name "Miel Vander Sande"
+                                                 [ foaf:name "Anastasia Dimou"
                                                  ] ;
                                  dcterms:description "Generic Mapping Language for RDF (RDB/CSV/TSV/XML/JSON/... to RDF) - Vocabulary description"@en ;
-                                 dcterms:modified "2014-09-10"^^xsd:date ;
+                                 dcterms:modified "2021-06-29" ;
                                  dcterms:title "RML: Generic Mapping Language for RDF"@en ;
                                  vann:preferredNamespacePrefix "rml" ;
-                                 vann:preferredNamespaceUri "http://semweb.mmlab.be/ns/rml#" .
+                                 vann:preferredNamespaceUri "http://semweb.mmlab.be/ns/rml#" ;
+                                 rdfs:comment "RMl-star extension" .
 
 #################################################################
 #    Annotation properties
@@ -70,7 +71,9 @@ owl:qualifiedCardinality rdf:type owl:AnnotationProperty .
 ###  http://semweb.mmlab.be/ns/rml#embeddedTriplesMap
 rml:embeddedTriplesMap rdf:type owl:ObjectProperty ;
                        rdfs:domain rml:StarMap ;
-                       rdfs:range rr:TriplesMap .
+                       rdfs:range rr:TriplesMap ;
+                       rdfs:comment "A relationship between a star map and a triples map that will form an embedded (asserted or non-asserted) triples map" ;
+                       rdfs:label "embedded triples map" .
 
 
 ###  http://semweb.mmlab.be/ns/rml#logicalSource
@@ -97,7 +100,9 @@ rml:objectMap rdf:type owl:ObjectProperty ;
                                          rr:ObjectMap
                                          rr:RefObjectMap
                                        )
-                         ] .
+                         ] ;
+              rdfs:comment "A relationship between a predicate object map and a object map, a ref object map or a star map that will form an object from a source" ;
+              rdfs:label "object map" .
 
 
 ###  http://semweb.mmlab.be/ns/rml#referenceFormulation
@@ -115,7 +120,9 @@ rml:subjectMap rdf:type owl:ObjectProperty ;
                             owl:unionOf ( rml:StarMap
                                           rr:SubjectMap
                                         )
-                          ] .
+                          ] ;
+               rdfs:comment "A relationship between a triples map and a subject map or a star map that will form a subject from a source" ;
+               rdfs:label "subject map" .
 
 
 ###  http://www.w3.org/ns/r2rml#joinCondition
@@ -244,11 +251,6 @@ rml:BaseSource rdf:type owl:Class ;
                rdfs:label "Base Source" .
 
 
-###  http://semweb.mmlab.be/ns/rml#EmbeddedTriplesMap
-rml:EmbeddedTriplesMap rdf:type owl:Class ;
-                       rdfs:subClassOf rr:TriplesMap .
-
-
 ###  http://semweb.mmlab.be/ns/rml#LogicalSource
 rml:LogicalSource rdf:type owl:Class ;
                   rdfs:subClassOf <http://org.semanticweb.owlapi/error#Error1> ,
@@ -259,6 +261,13 @@ rml:LogicalSource rdf:type owl:Class ;
                   rdfs:label "Logical Source" .
 
 
+###  http://semweb.mmlab.be/ns/rml#NonAssertedTriplesMap
+rml:NonAssertedTriplesMap rdf:type owl:Class ;
+                          rdfs:subClassOf rr:TriplesMap ;
+                          rdfs:comment "Represents an embedded non-asserted triples map" ;
+                          rdfs:label "Non-Asserted Triples Map" .
+
+
 ###  http://semweb.mmlab.be/ns/rml#ReferenceFormulation
 rml:ReferenceFormulation rdf:type owl:Class ;
                          rdfs:comment "Represents a Reference Formulation."@en ;
@@ -266,7 +275,9 @@ rml:ReferenceFormulation rdf:type owl:Class ;
 
 
 ###  http://semweb.mmlab.be/ns/rml#StarMap
-rml:StarMap rdf:type owl:Class .
+rml:StarMap rdf:type owl:Class ;
+            rdfs:comment "Represents a star map" ;
+            rdfs:label "Star Map" .
 
 
 ###  http://semweb.mmlab.be/ns/rml#TriplesMap
@@ -338,9 +349,15 @@ ql:XPath rdf:type owl:NamedIndividual ,
          rdfs:label "XPath" .
 
 
-[ foaf:name "Anastasia Dimou"
+[ foaf:name "Miel Vander Sande"
 ] .
 
+[ foaf:name "Anastasia Dimou"
+ ] .
+
+[ foaf:name "Anastasia Dimou"
+ ] .
+
 [ foaf:name "Miel Vander Sande"
  ] .
 
@@ -348,6 +365,12 @@ ql:XPath rdf:type owl:NamedIndividual ,
  ] .
 
 [ foaf:name "Miel Vander Sande"
+ ] .
+
+[ foaf:name "Miel Vander Sande"
+ ] .
+
+[ foaf:name "Anastasia Dimou"
  ] .
 
 [ owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger
