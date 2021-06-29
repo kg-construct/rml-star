@@ -63,7 +63,7 @@
             border: 1px solid #aca;
         }
         pre.ex-output:before {
-            content: "Example output RDF-star";
+            content: "Example RDF-star";
         }
     </style>
     <script class="remove">
@@ -82,6 +82,20 @@
             status: "W3C Recommendation",
             publisher: "W3C",
             date: "25 February 2014",
+          },
+          "RDF-star": {
+            title: "RDF-star and SPARQL-star",
+            href: "https://w3c.github.io/rdf-star/cg-spec/",
+            status: "Community Group Draft",
+            publisher: "W3C",
+            date: "13 April 2021",
+          },
+          "RML": {
+            title: "RDF Mapping Language",
+            href: "https://rml.io/specs/rml/",
+            status: "Unofficial draft",
+            publisher: "https://rml.io",
+            date: "06 October 2020",
           }
         },
         // These may become useful if the document gets a more 'official' status
@@ -161,7 +175,7 @@
         // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
       };
     </script>
-    //TODO register the rml-star goatcounter
+    <!--TODO register the rml-star goatcounter-->
     <script data-goatcounter="https://rml-star.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
     <noscript>
@@ -178,11 +192,13 @@
     </p>
 </section>
 
-<section id="conformance"></section>
-
 <section data-include="section/overview.md" data-include-format="markdown"></section>
 
-<section data-include="section/rml-star.md" data-include-format="markdown"></section>
+<section data-include="section/vocabulary.md" data-include-format="markdown"></section>
+
+<section data-include="section/embedded.md" data-include-format="markdown"></section>
+
+<section data-include="section/join.md" data-include-format="markdown"></section>
 
 </body>
 </html>
