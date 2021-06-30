@@ -32,8 +32,7 @@ Bobby,Dog,0.6
     
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource [ 
-    rml:source :CSVLogicalSource ;
+  rml:logicalSource :CSVLogicalSource ;
   rr:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
@@ -90,8 +89,7 @@ Bobby,Dog,0.6
     
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource [ 
-    rml:source :CSVLogicalSource ;
+  rml:logicalSource :CSVLogicalSource ;
   rr:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
