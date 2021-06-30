@@ -9,6 +9,8 @@ RDF-star [[RDF-star]] is an extension of the Resource Description Framework (RDF
 << :Alice a :Person >> :confidence 0.8 .
 </pre>
 
+RDF-star distinguishes between different types of [RDF-star triples](https://w3c.github.io/rdf-star/cg-spec/2021-04-13.html#dfn-triple): depending on where a triple [occurs](https://w3c.github.io/rdf-star/cg-spec/2021-04-13.html#occurrences), it can be either an [asserted triple](https://w3c.github.io/rdf-star/cg-spec/2021-04-13.html#dfn-asserted), an [embedded triple](https://w3c.github.io/rdf-star/cg-spec/2021-04-13.html#dfn-embedded), or both asserted *and* embedded. For a given [RDF-star graph](https://w3c.github.io/rdf-star/cg-spec/2021-04-13.html#dfn-graph), i.e., a for a given set of RDF-star triples, an <dfn data-lt="asserted">asserted triple</dfn> is a triple that is an element of the graph. An <dfn data-lt="embedded">embedded triple</dfn> is a triple that occurs as the subject or object of another triple.
+
 The RDF Mapping Language (RML) [[RML]] is a language for expressing mappings between heterogeneous data and RDF. In RML, rules can be expressed to iterate over a data source and refer to specific data within an iteration. Using these iterators and references, RML rules define how to express data in the data source in RDF.
 
 This document describes RML-star:
