@@ -26,18 +26,18 @@ Bobby,0.6
 # triples map that generates "type" triples
 :innerTriplesMap a rml:NonAssertedTriplesMap ;
   rml:logicalSource :classes ;
-  rr:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rr:objectMap [ rr:template "http://example.com/{class}" ] ] .
+    rml:objectMap [ rr:template "http://example.com/{class}" ] ] .
     
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :confidences ;
-  rr:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
+  rml:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
 </pre>
@@ -72,15 +72,15 @@ Bobby,0.6
 # triples map that generates objects of "type" triples
 :classTriplesMap a rr:TriplesMap ;
   rml:logicalSource :classes ;
-  rr:subjectMap [ rr:template "http://example.com/{class}" ].
+  rml:subjectMap [ rr:template "http://example.com/{class}" ].
 
 # triples map that generates "type" triples using a join
 :innerTriplesMap a rml:NonAssertedTriplesMap ;
   rml:logicalSource :confidences ;
-  rr:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       <b>rr:parentTriplesMap :classTriplesMap ;
       rr:joinCondition [
         rr:parent "entity" ;
@@ -89,10 +89,10 @@ Bobby,0.6
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :confidences ;
-  rr:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
+  rml:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
 </pre>

@@ -11,32 +11,28 @@ In the following example, per logical iteration, i.e., per CSV row, a "type" tri
 in the resulting graph both as an asserted and as an embedded triple: 
 
 <pre class="ex-input">
+# contents of the :confidence logical source
 entity,class,confidence
 Alice,Person,0.8
 Bobby,Dog,0.6
 </pre>
 
 <pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
-# logical source that will iterate over the CSV file
-:CSVLogicalSource a rml:LogicalSource ;
-  rml:source :CSVFile ;
-  rml:referenceFormulation ql:CSV .
-
 # triples map that generates "type" triples
 :innerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource :CSVLogicalSource ;
-  rr:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+  rml:logicalSource :confidence ;
+  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rr:objectMap [ rr:template "http://example.com/{class}" ] ] .
+    rml:objectMap [ rr:template "http://example.com/{class}" ] ] .
     
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource :CSVLogicalSource ;
-  rr:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
+  rml:logicalSource :confidence ;
+  rml:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
 </pre>
@@ -68,32 +64,28 @@ A summary of how to generate triples in any combination of [=asserted=] and/or [
 The following example is different than the previous in that `:innerTriplesMap` is declared to be an instance of `rml:NonAssertedTriplesMap`, with the effect that the generated "type" triples are only present in the resulting graph as [=embedded triples=], not as [=asserted triples=]:
 
 <pre class="ex-input">
+# contents of the :confidence logical source
 entity,class,confidence
 Alice,Person,0.8
 Bobby,Dog,0.6
 </pre>
 
 <pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
-# logical source that will iterate over the CSV file
-:CSVLogicalSource a rml:LogicalSource ;
-  rml:source :CSVFile ;
-  rml:referenceFormulation ql:CSV .
-
 # triples map that generates "type" triples
 :innerTriplesMap <b>a rml:NonAssertedTriplesMap</b> ;
-  rml:logicalSource :CSVLogicalSource ;
-  rr:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+  rml:logicalSource :confidence ;
+  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rr:objectMap [ rr:template "http://example.com/{class}" ] ] .
+    rml:objectMap [ rr:template "http://example.com/{class}" ] ] .
     
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :CSVLogicalSource ;
-  rr:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
+  rml:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
 </pre>

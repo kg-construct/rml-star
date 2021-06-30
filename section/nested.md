@@ -17,28 +17,28 @@ Bobby,Giraffe,1.0,beta
 # triples map that generates "type" triples
 :innerTriplesMap a rml:NonAssertedTriplesMap ;
   rml:logicalSource :predictions ;
-  rr:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rr:objectMap [ rr:template "http://example.com/{class}" ] ] ] .
+    rml:objectMap [ rr:template "http://example.com/{class}" ] ] ] .
         
 # triples map that generates "confidence" triples
 :middleTriplesMap a rml:NonAssertedTriplesMap ;
   rml:logicalSource :predictions ;
-  rr:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
+  rml:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rr:objectMap [ 
+    rml:objectMap [ 
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
     
 # triples map that generates "predicted by" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :predictions ;
-  rr:subjectMap [ <b>rml:embeddedTriplesMap :middleTriplesMap</b> ] ;
+  rml:subjectMap [ <b>rml:embeddedTriplesMap :middleTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :predictedBy ;
-    rr:objectMap [ rr:template "http://example.com/{predictor}" ] ] .
+    rml:objectMap [ rr:template "http://example.com/{predictor}" ] ] .
 </pre>
 
 <pre class="ex-output">
