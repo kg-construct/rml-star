@@ -52,6 +52,8 @@ Bobby,0.6
 It is also possible to generate [=embedded triples=] which themselves are built from multiple sources.
 This is done by using an [=embedded triples map=] which contains a [referencing object map](https://rml.io/specs/rml/#referencing-object-map).
 
+Note: this process for generating [=embedded triples=] with a [referencing object map](https://rml.io/specs/rml/#referencing-object-map) is not different from the general process to create embedded triples [described earlier](#embedded), but we include this section for clarity.
+
 <pre class="ex-input">
 # contents of logical source :classes
 entity,class
