@@ -34,7 +34,11 @@ Bobby,0.6
 # triples map that generates "confidence" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :confidences ;
-  rml:subjectMap [ rml:embeddedTriplesMap :innerTriplesMap ] ;
+  rml:subjectMap [ 
+    rml:embeddedTriplesMap :innerTriplesMap
+    <b>rr:joinCondition [
+        rr:parent "entity" ;
+        rr:child "entity" ]</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
     rml:objectMap [ 
