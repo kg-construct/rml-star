@@ -39,6 +39,6 @@ Property | Old domain | New domain
 
 All RML-star additions and changes to RML are shown in this diagram:
 <figure>
-  <img src="./ontology/rml-star_diagram.png" alt="Target structure"/>
+  <img src="./resources/images/rml-star_diagram.png" alt="Target structure"/>
   <figcaption>To enable the generation of RDF-star graphs, RML-star adds three properties and two classes to the RML ontology, and changes the domain of one property.</figcaption>
 </figure>
