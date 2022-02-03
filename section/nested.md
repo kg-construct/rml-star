@@ -1,8 +1,8 @@
-## Generating deeply nested embedded triples {#nested}
+## Generating deeply nested quoted triples {#nested}
 
-It is possible to create more deeply nested RDF-star by using an [=embedded triples map=] that on its own turn also uses an embedded triples map.
+It is possible to create more deeply nested RDF-star by using a [=quoted triples map=] that on its own turn also uses a quoted triples map.
 
-Note: this process for generating deeply nested [=embedded triples=] is not different from the general process to create embedded triples [described earlier](#embedded), but we include this section for clarity.
+Note: this process for generating deeply nested [=quoted triples=] is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
 
 <pre class="ex-input">
 # contents of logical source :predictions
@@ -21,21 +21,21 @@ Bobby,Giraffe,1.0,beta
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
     rml:objectMap [ rr:template "http://example.com/{class}" ] ] ] .
-        
+
 # triples map that generates "confidence" triples
 :middleTriplesMap a rml:NonAssertedTriplesMap ;
   rml:logicalSource :predictions ;
-  rml:subjectMap [ <b>rml:embeddedTriplesMap :innerTriplesMap</b> ] ;
+  rml:subjectMap [ <b>rml:quotedTriplesMap :innerTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :confidence ;
-    rml:objectMap [ 
+    rml:objectMap [
       rml:reference "confidence" ;
       rr:termType xsd:float ] ] .
-    
+
 # triples map that generates "predicted by" triples
 :outerTriplesMap a rr:TriplesMap ;
   rml:logicalSource :predictions ;
-  rml:subjectMap [ <b>rml:embeddedTriplesMap :middleTriplesMap</b> ] ;
+  rml:subjectMap [ <b>rml:quotedTriplesMap :middleTriplesMap</b> ] ;
   rr:predicateObjectMap [
     rr:predicate :predictedBy ;
     rml:objectMap [ rr:template "http://example.com/{predictor}" ] ] .
