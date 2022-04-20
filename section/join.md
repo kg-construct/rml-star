@@ -43,7 +43,7 @@ Bobby,0.6
     rr:predicate :confidence ;
     rml:objectMap [
       rml:reference "confidence" ;
-      rr:termType xsd:float ] ] .
+      rr:datatype xsd:float ] ] .
 </pre>
 
 <pre class="ex-output">
@@ -98,7 +98,7 @@ Bobby,0.6
     rr:predicate :confidence ;
     rml:objectMap [
       rml:reference "confidence" ;
-      rr:termType xsd:float ] ] .
+      rr:datatype xsd:float ] ] .
 </pre>
 
 <pre class="ex-output">

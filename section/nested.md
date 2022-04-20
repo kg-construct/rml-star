@@ -30,7 +30,7 @@ Bobby,Giraffe,1.0,beta
     rr:predicate :confidence ;
     rml:objectMap [
       rml:reference "confidence" ;
-      rr:termType xsd:float ] ] .
+      rr:datatype xsd:float ] ] .
 
 # triples map that generates "predicted by" triples
 :outerTriplesMap a rr:TriplesMap ;
