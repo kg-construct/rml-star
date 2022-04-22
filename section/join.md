@@ -9,14 +9,14 @@ If a [=star map=] has a [join condition](https://rml.io/specs/rml/#join-conditio
 If the [logical source](https://rml.io/specs/rml/#logical-source) of triples map in which a [=star map=] occurs and the logical source of star map's [=quoted triples map=] are not identical, then the star map must have at least one [join condition](https://rml.io/specs/rml/#join-condition).
 
 <pre class="ex-input">
-# contents of logical source :classes
+# contents of logical source ex:ClassesSource
 entity,class
 Alice,Person
 Bobby,Dog
 </pre>
 
 <pre class="ex-input">
-# contents of logical source :confidences
+# contents of logical source ex:ConfidencesSource
 entity,confidence
 Alice,0.8
 Bobby,0.6
@@ -24,31 +24,36 @@ Bobby,0.6
 
 <pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
 # triples map that generates "type" triples
-:innerTriplesMap a rml:NonAssertedTriplesMap ;
-  rml:logicalSource :classes ;
-  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+<#innerTriplesMap>
+  a rml:NonAssertedTriplesMap ;
+  rml:logicalSource ex:ClassesSource ;
+  rml:subjectMap [
+    rr:template "http://example.com/{entity}"
+  ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
-    rml:objectMap [ rr:template "http://example.com/{class}" ] ] .
+    rml:objectMap [ rr:template "http://example.com/{class}" ]
+  ] .
 
 # triples map that generates "confidence" triples
-:outerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource :confidences ;
+<#outerTriplesMap> a rr:TriplesMap ;
+  rml:logicalSource ex:ConfidencesSource ;
   rml:subjectMap [
-    rml:quotedTriplesMap :innerTriplesMap
+    rml:quotedTriplesMap <#innerTriplesMap>
     <b>rr:joinCondition [
-        rr:parent "entity" ;
-        rr:child "entity" ]</b> ] ;
+      rr:parent "entity" ;
+      rr:child "entity" ;
+    ]</b>
+  ] ;
   rr:predicateObjectMap [
-    rr:predicate :confidence ;
-    rml:objectMap [
-      rml:reference "confidence" ;
-      rr:datatype xsd:float ] ] .
+    rr:predicate ex:confidence ;
+    rml:objectMap [ rml:reference "confidence" ; rr:datatype xsd:float ]
+  ] .
 </pre>
 
 <pre class="ex-output">
-<< :Alice a :Person >> :confidence 0.8 .
-<< :Bobby a :Dog >> :confidence 0.6 .
+<< ex:Alice a ex:Person >> ex:confidence 0.8 .
+<< ex:Bobby a ex:Dog >> ex:confidence 0.6 .
 </pre>
 
 ### Using star map together with referencing object maps
@@ -59,14 +64,14 @@ This is done by using a [=quoted triples map=] which contains a [referencing obj
 Note: this process for generating [=quoted triples=] with a [referencing object map](https://rml.io/specs/rml/#referencing-object-map) is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
 
 <pre class="ex-input">
-# contents of logical source :classes
+# contents of logical source ex:ClassesSource
 entity,class
 Alice,Person
 Bobby,Dog
 </pre>
 
 <pre class="ex-input">
-# contents of logical source :confidences
+# contents of logical source ex:ConfidencesSource
 entity,confidence
 Alice,0.8
 Bobby,0.6
@@ -74,34 +79,45 @@ Bobby,0.6
 
 <pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
 # triples map that generates objects of "type" triples
-:classTriplesMap a rr:TriplesMap ;
-  rml:logicalSource :classes ;
-  rml:subjectMap [ rr:template "http://example.com/{class}" ].
+<#classTriplesMap>
+  a rr:TriplesMap ;
+  rml:logicalSource ex:ClassesSource ;
+  rml:subjectMap [
+    rr:template "http://example.com/{class}"
+  ] .
 
 # triples map that generates "type" triples using a join
-:innerTriplesMap a rml:NonAssertedTriplesMap ;
-  rml:logicalSource :confidences ;
-  rml:subjectMap [ rr:template "http://example.com/{entity}" ] ;
+<#innerTriplesMap>
+  a rml:NonAssertedTriplesMap ;
+  rml:logicalSource ex:ConfidencesSource ;
+  rml:subjectMap [
+    rr:template "http://example.com/{entity}"
+  ] ;
   rr:predicateObjectMap [
     rr:predicate rdf:type ;
     rml:objectMap [
-      <b>rr:parentTriplesMap :classTriplesMap ;
+      <b>rr:parentTriplesMap <#classTriplesMap> ;
       rr:joinCondition [
         rr:parent "entity" ;
-        rr:child "entity" ]</b> ] ] .
+        rr:child "entity" ;
+      ]</b>
+    ]
+  ] .
 
 # triples map that generates "confidence" triples
-:outerTriplesMap a rr:TriplesMap ;
-  rml:logicalSource :confidences ;
-  rml:subjectMap [ rml:quotedTriplesMap :innerTriplesMap ] ;
+<#outerTriplesMap>
+  a rr:TriplesMap ;
+  rml:logicalSource ex:ConfidencesSource ;
+  rml:subjectMap [
+    rml:quotedTriplesMap <#innerTriplesMap>
+  ] ;
   rr:predicateObjectMap [
-    rr:predicate :confidence ;
-    rml:objectMap [
-      rml:reference "confidence" ;
-      rr:datatype xsd:float ] ] .
+    rr:predicate ex:confidence ;
+    rml:objectMap [ rml:reference "confidence"; rr:datatype xsd:float ]
+  ] .
 </pre>
 
 <pre class="ex-output">
-<< :Alice a :Person >> :confidence 0.8 .
-<< :Bobby a :Dog >> :confidence 0.6 .
+<< ex:Alice a ex:Person >> ex:confidence 0.8 .
+<< ex:Bobby a ex:Dog >> ex:confidence 0.6 .
 </pre>
