@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en" dir="ltr"><head>
 <meta charset="utf-8">
-<meta name="generator" content="ReSpec 32.1.6">
+<meta name="generator" content="ReSpec 32.3.0">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <style>
 dfn{cursor:pointer}
@@ -285,8 +285,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "key": "This Version",
       "data": [
         {
-          "value": "https://kg-construct.github.io/rml-star-spec/20220504/",
-          "href": "https://kg-construct.github.io/rml-star-spec/20220504/"
+          "value": "https://kg-construct.github.io/rml-star-spec/20221126/",
+          "href": "https://kg-construct.github.io/rml-star-spec/20221126/"
         }
       ]
     },
@@ -294,8 +294,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       "key": "Previous Version",
       "data": [
         {
-          "value": "https://kg-construct.github.io/rml-star-spec/20220222/",
-          "href": "https://kg-construct.github.io/rml-star-spec/20220222/"
+          "value": "https://kg-construct.github.io/rml-star-spec/20220504/",
+          "href": "https://kg-construct.github.io/rml-star-spec/20220504/"
         }
       ]
     },
@@ -309,8 +309,8 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
       ]
     }
   ],
-  "publishISODate": "2022-05-01T00:00:00.000Z",
-  "generatedSubtitle": "Draft Community Group Report 01 May 2022"
+  "publishISODate": "2022-11-25T00:00:00.000Z",
+  "generatedSubtitle": "Draft Community Group Report 25 November 2022"
 }</script>
 <link rel="stylesheet" href="https://www.w3.org/StyleSheets/TR/2016/cg-draft"></head>
 <body class="h-entry informative"><div class="head">
@@ -340,13 +340,18 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
     <a class="ed_mailto u-email email p-name" href="mailto:david.chaves@upm.es">David Chaves-Fraga</a> (<a class="p-org org h-org" href="https://oeg.fi.upm.es/">Ontology Engineering Group –  Universidad Politécnica de Madrid</a>)
   </dd>
 
-  <dt>This Version</dt><dd>
+  <dt>This Version:</dt><dd>
+    <a href="https://kg-construct.github.io/rml-star-spec/20221126/">https://kg-construct.github.io/rml-star-spec/20221126/</a>
+  </dd><dt>Previous Version:</dt><dd>
     <a href="https://kg-construct.github.io/rml-star-spec/20220504/">https://kg-construct.github.io/rml-star-spec/20220504/</a>
-  </dd><dt>Previous Version</dt><dd>
-    <a href="https://kg-construct.github.io/rml-star-spec/20220222/">https://kg-construct.github.io/rml-star-spec/20220222/</a>
-  </dd><dt>Website</dt><dd>
+  </dd><dt>Website:</dt><dd>
     <a href="https://rml.io/">https://rml.io/</a>
+  </dd><dt>Feedback:</dt><dd>
+    <a href="https://github.com/kg-construct/rml-star-spec">GitHub kg-construct/rml-star-spec</a>
+    (<a href="https://github.com/kg-construct/rml-star-spec/issues">issues</a>,
+    <a href="https://github.com/kg-construct/rml-star-spec/pulls">pull requests</a>)
   </dd>
+
 
     </dl>
 
@@ -473,7 +478,9 @@ the following namespace prefix bindings unless otherwise stated:</p>
 <li><code>rml:ReferenceFormulation</code> is the class of supported reference formulations as defined by RML.</li>
 </ul>
 <section id="overview-of-rml-star-terms"><div class="header-wrapper"><h3 id="x2-1-overview-of-rml-star-terms"><bdi class="secno">2.1 </bdi>Overview of RML-star terms</h3><a class="self-link" href="#overview-of-rml-star-terms" aria-label="Permalink for Section 2.1"></a></div>
-<p>The new terms are summarized in the following tables.</p>
+<p>The new terms and extensions or existing terms are summarized in the following tables.
+This vocabulary extension involves two class additions (<code>rml:StarMap</code> and <code>rml:NonAssertedTriplesMap</code>), three object property additions (<code>rml:quotedTriplesMap</code>, <code>rml:subjectMap</code> and <code>rml:objectMap</code>) and one property modification (<code>rml:joinCondition</code>).
+Note that the properties <code>rr:objectMap</code>and <code>rr:subjectMap</code> have been replaced for <code>rml:subjectMap</code> and <code>rml:objectMap</code> respectively. The original properties from R2RML had cardinality restrictions that prevent them from including <code>rml:StarMap</code> in their range.</p>
 <table>
 <thead>
 <tr>
@@ -531,11 +538,11 @@ the following namespace prefix bindings unless otherwise stated:</p>
 </tbody></table>
 <p>All RML-star additions and changes to RML are shown in Figure 1:</p>
 <figure id="fig-to-enable-the-generation-of-rdf-star-graphs-rml-star-adds-three-properties-and-two-classes-to-the-rml-ontology-and-it-also-modifies-the-domain-of-one-property">
-  <img src="./resources/images/rml-star_diagram.png" alt="Target structure">
+  <img src="./resources/images/rml-star_diagram.png" alt="Target structure" height="2005" width="4005">
   <figcaption>Figure <bdi class="figno">1</bdi> <span class="fig-title">To enable the generation of RDF-star graphs, RML-star adds three properties and two classes to the RML ontology, and it also modifies the domain of one property.</span></figcaption>
 </figure></section></section>
 
-<section id="generating-quoted-triples-with-rml-star"><div class="header-wrapper"><h2 id="quoted"><bdi class="secno">3. </bdi>Generating quoted triples with RML-star</h2><a class="self-link" href="#quoted" aria-label="Permalink for Section 3."></a></div><p>A <dfn id="dfn-star-map" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">star map</dfn> (<code>rml:StarMap</code>) is similar to a <a href="https://rml.io/specs/rml/#term-map">term map</a> that generates <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-2">quoted triples</a>.
+<section id="generating-quoted-triples-with-rml-star"><div class="header-wrapper"><h2 id="quoted"><bdi class="secno">3. </bdi>Generating quoted triples with RML-star</h2><a class="self-link" href="#quoted" aria-label="Permalink for Section 3."></a></div><p>A <dfn data-plurals="star maps" id="dfn-star-map" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">star map</dfn> (<code>rml:StarMap</code>) is similar to a <a href="https://rml.io/specs/rml/#term-map">term map</a> that generates <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-2">quoted triples</a>.
 It can be used within subject and object maps.
 A star map is linked to a <a href="https://rml.io/specs/rml/#triples-map">triples map</a> by the <dfn id="dfn-quoted-triples-map" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">quoted triples map</dfn> property (<code>rml:quotedTriplesMap</code>).
 The <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-3">quoted triples</a> generated by a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-1">star map</a> are exactly those triples generated by its <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-1">quoted triples map</a>.
@@ -570,7 +577,7 @@ Bobby,Dog,0.6</code></pre>
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence"; rr:datatype xsd:float ]
+    rml:objectMap [ rml:reference "confidence" ]
   ] .</pre>
 
 <pre class="ex-output" aria-busy="false"><code class="hljs"># Triples generated by &lt;#innerTriplesMap&gt;
@@ -581,13 +588,55 @@ ex:Bobby a ex:Dog .
 &lt;&lt; ex:Alice a ex:Person &gt;&gt; ex:confidence 0.8 .
 &lt;&lt; ex:Bobby a ex:Dog &gt;&gt; ex:confidence 0.6 .</code></pre>
 
+
+<p>The previous example shows a <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-5">quoted triple</a> within a subject map.
+Since <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-6">quoted triples</a> can be both subjects and objects, <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-2">star maps</a> can also
+be used in the position of object maps, as the following example shows:</p>
+<pre class="ex-input" aria-busy="false"><code class="hljs"># contents of the ex:ConfidenceSource logical source
+entity,pet,class
+Alice,Bobby,Dog
+Steve,Pumpkin,Cat</code></pre>
+
+<pre class="ex-mapping nohighlight">
+# triples map that generates "type" triples
+&lt;#innerTriplesMap&gt;
+  a rr:TriplesMap ;
+  rml:logicalSource ex:ConfidenceSource ;
+  rml:subjectMap [
+    rr:template "http://example.com/{pet}"
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate rdf:type ;
+    rml:objectMap [ rr:template "http://example.com/{class}" ]
+  ] .
+
+# triples map that generates "has pet" triples
+&lt;#outerTriplesMap&gt;
+  a rr:TriplesMap ;
+  rml:logicalSource ex:ConfidenceSource ;
+  rml:subjectMap [
+    rr:template "http://example.com/{entity}"
+  ] ;
+  rr:predicateObjectMap [
+    rr:predicate ex:has_pet ;
+    <b>rml:objectMap [rml:quotedTriplesMap &lt;#innerTriplesMap&gt;]</b>
+  ] .</pre>
+
+<pre class="ex-output" aria-busy="false"><code class="hljs"># Triples generated by &lt;#innerTriplesMap&gt;
+ex:Bobby a ex:Dog .
+ex:Pumpkin a ex:Cat .
+
+# Triples generated by &lt;#outerTriplesMap&gt;
+ex:Alice ex:has_pet &lt;&lt; ex:Bobby a ex:Dog &gt;&gt; .
+ex:Steve ex:has_pet &lt;&lt; ex:Pumpkin a ex:Cat &gt;&gt; .</code></pre>
+
 <p>By default, triples generated by a triples map are generated as <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-1">asserted triples</a>.
-If the triples map is also used in a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-2">star map</a>, the triples it generates <em>also</em> occur in the resulting graph as <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-5">quoted triples</a>, by the process explained above.
+If the triples map is also used in a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-3">star map</a>, the triples it generates <em>also</em> occur in the resulting graph as <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-7">quoted triples</a>, by the process explained above.
 The generation of asserted triples by a triples map can be supressed by declaring it an <dfn id="dfn-non-asserted-triples-map" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">non-asserted triples map</dfn> (<code>rml:NonAssertedTriplesMap</code>),
 a subclass of <code>rr:TriplesMap</code>.
 A triples map of subclass <a data-link-type="dfn" href="#dfn-non-asserted-triples-map" class="internalDFN" id="ref-for-dfn-non-asserted-triples-map-1">non-asserted triples map</a> does not generate <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-2">asserted triples</a>,
-but might generate <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-6">quoted triples</a> if it is used in a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-3">star map</a>.</p>
-<p>The following example is different than the previous in that <code>&lt;#innerTriplesMap&gt;</code> is declared to be an instance of <code>rml:NonAssertedTriplesMap</code>, with the effect that the generated "type" triples are only present in the resulting graph as <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-7">quoted triples</a>, not as <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-3">asserted triples</a>:</p>
+but might generate <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-8">quoted triples</a> if it is used in a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-4">star map</a>.</p>
+<p>The following example is different than the previous in that <code>&lt;#innerTriplesMap&gt;</code> is declared to be an instance of <code>rml:NonAssertedTriplesMap</code>, with the effect that the generated "type" triples are only present in the resulting graph as <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-9">quoted triples</a>, not as <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-3">asserted triples</a>:</p>
 <pre class="ex-input" aria-busy="false"><code class="hljs"># contents of the ex:ConfidenceSource logical source
 entity,class,confidence
 Alice,Person,0.8
@@ -615,14 +664,14 @@ Bobby,Dog,0.6</code></pre>
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence"; rr:datatype xsd:float ]
+    rml:objectMap [ rml:reference "confidence" ]
   ] .</pre>
 
 <pre class="ex-output" aria-busy="false"><code class="hljs">&lt;&lt; ex:Alice a ex:Person &gt;&gt; ex:confidence 0.8 .
 &lt;&lt; ex:Bobby a ex:Dog &gt;&gt; ex:confidence 0.6 .</code></pre>
 
 
-<p>A summary of how to generate triples in any combination of <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-4">asserted</a> and/or <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-8">quoted triples</a> is given in the following table, where <code>rr:TriplesMap</code> refers to instances of <code>rr:TriplesMap</code> that are not of the <code>rml:NonAssertedTriplesMap</code> subclass:</p>
+<p>A summary of how to generate triples in any combination of <a data-link-type="dfn" href="#dfn-asserted" class="internalDFN" id="ref-for-dfn-asserted-4">asserted</a> and/or <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-10">quoted triples</a> is given in the following table, where <code>rr:TriplesMap</code> refers to instances of <code>rr:TriplesMap</code> that are not of the <code>rml:NonAssertedTriplesMap</code> subclass:</p>
 <table>
 <thead>
 <tr>
@@ -647,9 +696,9 @@ Bobby,Dog,0.6</code></pre>
 
 <section id="generating-quoted-triples-from-multiple-sources"><div class="header-wrapper"><h2 id="join"><bdi class="secno">4. </bdi>Generating quoted triples from multiple sources</h2><a class="self-link" href="#join" aria-label="Permalink for Section 4."></a></div><p>RML-star can create RDF-star triples from multiple <a href="https://rml.io/specs/rml/#logical-source">logical sources</a>.
 When creating RDF-star triples from multiple <a href="https://rml.io/specs/rml/#logical-source">logical sources</a>, <a href="https://rml.io/specs/rml/#join-condition">join conditions</a> are used, just like when using <a href="https://rml.io/specs/rml/#referencing-object-map">referencing object maps</a> in RML.</p>
-<p>If a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-4">star map</a> has a <a href="https://rml.io/specs/rml/#join-condition">join condition</a>, it generates <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-9">quoted triples</a> as follows. Each combination of iterations, i.e., the <a href="https://en.wikipedia.org/wiki/Cartesian_product">Cartesian product</a>, from the <em>child source</em> and the <em>parent source</em> is looked at. Here, we consider as <dfn id="dfn-child-source" tabindex="0" aria-haspopup="dialog" class="respec-offending-element" title="Found definition for &quot;child source&quot;, but nothing links to it. This is usually a spec bug!" data-dfn-type="dfn">child source</dfn> the <a href="https://rml.io/specs/rml/#logical-source">logical source</a> of the <a href="https://rml.io/specs/rml/#triples-map">triples map</a> in which the star map occurs, and as <dfn id="dfn-parent-source" tabindex="0" aria-haspopup="dialog" class="respec-offending-element" title="Found definition for &quot;parent source&quot;, but nothing links to it. This is usually a spec bug!" data-dfn-type="dfn">parent source</dfn> the logical source of the star map's <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-4">quoted triples map</a>. A star map only generates quoted triples for combinations in which the join condition holds true. As is the case when <a href="https://rml.io/specs/rml/#logical-join">join conditions are used in in referencing object maps</a>, a join condition checks for equality of the <a href="https://rml.io/specs/rml/#reference-value">reference values</a> of the <a href="https://rml.io/specs/rml/#child-reference">child</a>/<a href="https://rml.io/specs/rml/#parent-reference">parent reference</a> between iterations of the child/parent source.</p>
+<p>If a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-5">star map</a> has a <a href="https://rml.io/specs/rml/#join-condition">join condition</a>, it generates <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-11">quoted triples</a> as follows. Each combination of iterations, i.e., the <a href="https://en.wikipedia.org/wiki/Cartesian_product">Cartesian product</a>, from the <em>child source</em> and the <em>parent source</em> is looked at. Here, we consider as <dfn id="dfn-child-source" tabindex="0" aria-haspopup="dialog" class="respec-offending-element" title="Found definition for &quot;child source&quot;, but nothing links to it. This is usually a spec bug!" data-dfn-type="dfn">child source</dfn> the <a href="https://rml.io/specs/rml/#logical-source">logical source</a> of the <a href="https://rml.io/specs/rml/#triples-map">triples map</a> in which the star map occurs, and as <dfn id="dfn-parent-source" tabindex="0" aria-haspopup="dialog" class="respec-offending-element" title="Found definition for &quot;parent source&quot;, but nothing links to it. This is usually a spec bug!" data-dfn-type="dfn">parent source</dfn> the logical source of the star map's <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-4">quoted triples map</a>. A star map only generates quoted triples for combinations in which the join condition holds true. As is the case when <a href="https://rml.io/specs/rml/#logical-join">join conditions are used in in referencing object maps</a>, a join condition checks for equality of the <a href="https://rml.io/specs/rml/#reference-value">reference values</a> of the <a href="https://rml.io/specs/rml/#child-reference">child</a>/<a href="https://rml.io/specs/rml/#parent-reference">parent reference</a> between iterations of the child/parent source.</p>
 
-<p>If the <a href="https://rml.io/specs/rml/#logical-source">logical source</a> of triples map in which a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-5">star map</a> occurs and the logical source of star map's <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-5">quoted triples map</a> are not identical, then the star map must have at least one <a href="https://rml.io/specs/rml/#join-condition">join condition</a>.</p>
+<p>If the <a href="https://rml.io/specs/rml/#logical-source">logical source</a> of triples map in which a <a data-link-type="dfn" href="#dfn-star-map" class="internalDFN" id="ref-for-dfn-star-map-6">star map</a> occurs and the logical source of star map's <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-5">quoted triples map</a> are not identical, then the star map must have at least one <a href="https://rml.io/specs/rml/#join-condition">join condition</a>.</p>
 <pre class="ex-input" aria-busy="false"><code class="hljs"># contents of logical source ex:ClassesSource
 entity,class
 Alice,Person
@@ -685,16 +734,16 @@ Bobby,0.6</code></pre>
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence" ; rr:datatype xsd:float ]
+    rml:objectMap [ rml:reference "confidence" ]
   ] .</pre>
 
 <pre class="ex-output" aria-busy="false"><code class="hljs">&lt;&lt; ex:Alice a ex:Person &gt;&gt; ex:confidence 0.8 .
 &lt;&lt; ex:Bobby a ex:Dog &gt;&gt; ex:confidence 0.6 .</code></pre>
 
 <section id="using-star-map-together-with-referencing-object-maps"><div class="header-wrapper"><h3 id="x4-1-using-star-map-together-with-referencing-object-maps"><bdi class="secno">4.1 </bdi>Using star map together with referencing object maps</h3><a class="self-link" href="#using-star-map-together-with-referencing-object-maps" aria-label="Permalink for Section 4.1"></a></div>
-<p>It is also possible to generate <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-10">quoted triples</a> which themselves are built from multiple sources.
+<p>It is also possible to generate <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-12">quoted triples</a> which themselves are built from multiple sources.
 This is done by using a <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-6">quoted triples map</a> which contains a <a href="https://rml.io/specs/rml/#referencing-object-map">referencing object map</a>.</p>
-<p>Note: this process for generating <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-11">quoted triples</a> with a <a href="https://rml.io/specs/rml/#referencing-object-map">referencing object map</a> is not different from the general process to create quoted triples <a href="#quoted">described earlier</a>, but we include this section for clarity.</p>
+<p>Note: this process for generating <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-13">quoted triples</a> with a <a href="https://rml.io/specs/rml/#referencing-object-map">referencing object map</a> is not different from the general process to create quoted triples <a href="#quoted">described earlier</a>, but we include this section for clarity.</p>
 <pre class="ex-input" aria-busy="false"><code class="hljs"># contents of logical source ex:ClassesSource
 entity,class
 Alice,Person
@@ -741,14 +790,14 @@ Bobby,0.6</code></pre>
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence"; rr:datatype xsd:float ]
+    rml:objectMap [ rml:reference "confidence" ]
   ] .</pre>
 
 <pre class="ex-output" aria-busy="false"><code class="hljs">&lt;&lt; ex:Alice a ex:Person &gt;&gt; ex:confidence 0.8 .
 &lt;&lt; ex:Bobby a ex:Dog &gt;&gt; ex:confidence 0.6 .</code></pre></section></section>
 
 <section id="generating-deeply-nested-quoted-triples"><div class="header-wrapper"><h2 id="nested"><bdi class="secno">5. </bdi>Generating deeply nested quoted triples</h2><a class="self-link" href="#nested" aria-label="Permalink for Section 5."></a></div><p>It is possible to create more deeply nested RDF-star by using a <a data-link-type="dfn" href="#dfn-quoted-triples-map" class="internalDFN" id="ref-for-dfn-quoted-triples-map-7">quoted triples map</a> that on its own turn also uses a quoted triples map.</p>
-<p>Note: this process for generating deeply nested <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-12">quoted triples</a> is not different from the general process to create quoted triples <a href="#quoted">described earlier</a>, but we include this section for clarity.</p>
+<p>Note: this process for generating deeply nested <a data-link-type="dfn" href="#dfn-quoted" class="internalDFN" id="ref-for-dfn-quoted-14">quoted triples</a> is not different from the general process to create quoted triples <a href="#quoted">described earlier</a>, but we include this section for clarity.</p>
 <pre class="ex-input" aria-busy="false"><code class="hljs"># contents of logical source ex:PredictionsSource
 entity,class,confidence,predictor
 Alice,Person,0.8,alpha
@@ -778,7 +827,7 @@ Bobby,Giraffe,1.0,beta</code></pre>
   ] ;
   rr:predicateObjectMap [
     rr:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence" ; rr:datatype xsd:float ]
+    rml:objectMap [ rml:reference "confidence" ]
   ] .
 
 # triples map that generates "predicted by" triples
@@ -840,13 +889,13 @@ Bobby,Giraffe,1.0,beta</code></pre>
     <li>
     <a href="#ref-for-dfn-quoted-1" title="§ 2.1 Overview of RML-star terms">§ 2.1 Overview of RML-star terms</a>
   </li><li>
-    <a href="#ref-for-dfn-quoted-2" title="§ 3. Generating quoted triples with RML-star">§ 3. Generating quoted triples with RML-star</a> <a href="#ref-for-dfn-quoted-3" title="Reference 2">(2)</a> <a href="#ref-for-dfn-quoted-4" title="Reference 3">(3)</a> <a href="#ref-for-dfn-quoted-5" title="Reference 4">(4)</a> <a href="#ref-for-dfn-quoted-6" title="Reference 5">(5)</a> <a href="#ref-for-dfn-quoted-7" title="Reference 6">(6)</a> <a href="#ref-for-dfn-quoted-8" title="Reference 7">(7)</a>
+    <a href="#ref-for-dfn-quoted-2" title="§ 3. Generating quoted triples with RML-star">§ 3. Generating quoted triples with RML-star</a> <a href="#ref-for-dfn-quoted-3" title="Reference 2">(2)</a> <a href="#ref-for-dfn-quoted-4" title="Reference 3">(3)</a> <a href="#ref-for-dfn-quoted-5" title="Reference 4">(4)</a> <a href="#ref-for-dfn-quoted-6" title="Reference 5">(5)</a> <a href="#ref-for-dfn-quoted-7" title="Reference 6">(6)</a> <a href="#ref-for-dfn-quoted-8" title="Reference 7">(7)</a> <a href="#ref-for-dfn-quoted-9" title="Reference 8">(8)</a> <a href="#ref-for-dfn-quoted-10" title="Reference 9">(9)</a>
   </li><li>
-    <a href="#ref-for-dfn-quoted-9" title="§ 4. Generating quoted triples from multiple sources">§ 4. Generating quoted triples from multiple sources</a>
+    <a href="#ref-for-dfn-quoted-11" title="§ 4. Generating quoted triples from multiple sources">§ 4. Generating quoted triples from multiple sources</a>
   </li><li>
-    <a href="#ref-for-dfn-quoted-10" title="§ 4.1 Using star map together with referencing object maps">§ 4.1 Using star map together with referencing object maps</a> <a href="#ref-for-dfn-quoted-11" title="Reference 2">(2)</a>
+    <a href="#ref-for-dfn-quoted-12" title="§ 4.1 Using star map together with referencing object maps">§ 4.1 Using star map together with referencing object maps</a> <a href="#ref-for-dfn-quoted-13" title="Reference 2">(2)</a>
   </li><li>
-    <a href="#ref-for-dfn-quoted-12" title="§ 5. Generating deeply nested quoted triples">§ 5. Generating deeply nested quoted triples</a>
+    <a href="#ref-for-dfn-quoted-14" title="§ 5. Generating deeply nested quoted triples">§ 5. Generating deeply nested quoted triples</a>
   </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-rml-star-mapping" aria-label="Links in this document to definition: RML-star mapping">
@@ -914,9 +963,9 @@ Bobby,Giraffe,1.0,beta</code></pre>
       <p><b>Referenced in:</b></p>
       <ul>
     <li>
-    <a href="#ref-for-dfn-star-map-1" title="§ 3. Generating quoted triples with RML-star">§ 3. Generating quoted triples with RML-star</a> <a href="#ref-for-dfn-star-map-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-star-map-3" title="Reference 3">(3)</a>
+    <a href="#ref-for-dfn-star-map-1" title="§ 3. Generating quoted triples with RML-star">§ 3. Generating quoted triples with RML-star</a> <a href="#ref-for-dfn-star-map-2" title="Reference 2">(2)</a> <a href="#ref-for-dfn-star-map-3" title="Reference 3">(3)</a> <a href="#ref-for-dfn-star-map-4" title="Reference 4">(4)</a>
   </li><li>
-    <a href="#ref-for-dfn-star-map-4" title="§ 4. Generating quoted triples from multiple sources">§ 4. Generating quoted triples from multiple sources</a> <a href="#ref-for-dfn-star-map-5" title="Reference 2">(2)</a>
+    <a href="#ref-for-dfn-star-map-5" title="§ 4. Generating quoted triples from multiple sources">§ 4. Generating quoted triples from multiple sources</a> <a href="#ref-for-dfn-star-map-6" title="Reference 2">(2)</a>
   </li>
   </ul>
     </div><div class="dfn-panel" hidden="" role="dialog" aria-modal="true" id="dfn-panel-for-dfn-quoted-triples-map" aria-label="Links in this document to definition: quoted triples map">
