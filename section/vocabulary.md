@@ -38,7 +38,9 @@ The RML-star vocabulary consists of the RML-star specific defined classes but al
 * `rml:ReferenceFormulation` is the class of supported reference formulations as defined by RML.
 
 ### Overview of RML-star terms
-The new terms are summarized in the following tables.
+The new terms and extensions or existing terms are summarized in the following tables.
+This vocabulary extension involves two class additions (`rml:StarMap` and `rml:NonAssertedTriplesMap`), three object property additions (`rml:quotedTriplesMap`, `rml:subjectMap` and `rml:objectMap`) and one property modification (`rml:joinCondition`).
+Note that the properties `rr:objectMap`and `rr:subjectMap` have been replaced for `rml:subjectMap` and `rml:objectMap` respectively. The original properties from R2RML had cardinality restrictions that prevent them from including `rml:StarMap` in their range.
 
 Property | Domain | Range
 -|-|-
