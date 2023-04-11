@@ -11,7 +11,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://w3id.org/rml/> .
 
-<http://w3id.org/rml/> rdf:type owl:Ontology ;
+<http://w3id.org/rml/star/> rdf:type owl:Ontology ;
                         dc:description "RML module for generating RDF-star graphs"@en ;
                         dc:modified "2023-04-05" ;
                         dc:title "RML-star"@en ;
