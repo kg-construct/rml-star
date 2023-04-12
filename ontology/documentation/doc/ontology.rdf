@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://w3id.org/rml/star/"
+     xml:base="http://w3id.org/rml/star/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:ns="http://creativecommons.org/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
+     xmlns:vann="http://purl.org/vocab/vann/">
+    <owl:Ontology rdf:about="http://w3id.org/rml/star/">
+        <dc:description xml:lang="en">RML module for generating RDF-star graphs</dc:description>
+        <dc:modified>2023-04-05</dc:modified>
+        <dc:title xml:lang="en">RML-star</dc:title>
+        <vann:preferredNamespaceUri>http://w3id.org/rml/star/</vann:preferredNamespaceUri>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://creativecommons.org/ns#license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://creativecommons.org/ns#license"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/contributor -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/issued -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/publisher -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
+    
+
+
+    <!-- http://www.linkedmodel.org/schema/vaem#acronym -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.linkedmodel.org/schema/vaem#acronym"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/rml/quotedTriplesMap -->
+
+
+    <owl:ObjectProperty rdf:about="http://w3id.org/rml/quotedTriplesMap">
+        <rdfs:domain rdf:resource="http://w3id.org/rml/StarMap"/>
+        <rdfs:range rdf:resource="http://w3id.org/rml/TriplesMap"/>
+        <rdfs:comment xml:lang="en">An quoted TriplesMap element to generate a RDF-star triple as subject or object or another triple from a logical source record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/star/"/>
+        <rdfs:label>quoted triples map</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://w3id.org/rml/NonAssertedTriplesMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/NonAssertedTriplesMap">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rml/TriplesMap"/>
+        <rdfs:comment xml:lang="en">A type of Triples Map that is not asserted in the resulting graph</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/star/"/>
+        <rdfs:label>Non Asserted Triples Map</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rml/StarMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/StarMap">
+        <rdfs:comment xml:lang="eb">Represents a star map able to generate RDF-star triples.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/core/"/>
+        <rdfs:label>Star Map</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://w3id.org/rml/TriplesMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/TriplesMap"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

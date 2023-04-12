@@ -99,7 +99,7 @@ foaf:name rdf:type owl:AnnotationProperty .
 ###  http://w3id.org/rml/StarMap
 :StarMap rdf:type owl:Class ;
          rdfs:comment "Represents a star map able to generate RDF-star triples."@eb ;
-         rdfs:isDefinedBy <http://w3id.org/rml/core/> ;
+         rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
          rdfs:label "Star Map" .
 
 
