@@ -2,21 +2,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<http://vocab.linkeddata.es/def/conceptual-mapping> a prov:Entity;
-	 dc:title "Conceptual Mapping";
-	 prov:wasAttributedTo :agent0;
-	 prov:wasAttributedTo :agent1;
-	 prov:wasAttributedTo :agent2;
-	 prov:wasAttributedTo :agent3;
-	 prov:wasAttributedTo :agent4;
-	 prov:wasAttributedTo :agent5;
+<..\index-en.html> a prov:Entity;
+	 dc:title "RML-star";
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
-	 prov:wasRevisionOf <http://vocab.linkeddata.es/def/conceptual-mapping/1.0.0/>;
-	 prov:wasGeneratedAt "2022-07-29T00:00:00";
 .
-:agent0 a prov:Agent; foaf:name "Ana Iglesias Molina (Ontology Engineering Group)".
-:agent1 a prov:Agent; foaf:name "Andrea Cimmino (Ontology Engineering Group)".
-:agent2 a prov:Agent; foaf:name "David Chaves Fraga (Ontology Engineering Group)".
-:agent3 a prov:Agent; foaf:name "Edna Ruckhaus (Ontology Engineering Group)".
-:agent4 a prov:Agent; foaf:name "Oscar Corcho (Ontology Engineering Group)".
-:agent5 a prov:Agent; foaf:name "Raúl García Castro (Ontology Engineering Group)".

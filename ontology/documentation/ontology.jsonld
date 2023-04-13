@@ -52,7 +52,7 @@
     "@value" : "Represents a star map able to generate RDF-star triples."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://w3id.org/rml/core/"
+    "@id" : "http://w3id.org/rml/star/"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@value" : "Star Map"

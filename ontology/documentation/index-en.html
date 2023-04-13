@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
- <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Conceptual Mapping</title>
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>RML-star</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://vocab.linkeddata.es/def/conceptual-mapping","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://vocab.linkeddata.es/def/conceptual-mapping","name":"Conceptual Mapping", "headline":"This ontology describes a mapping language that aims to gather the expressiveness of declarative mapping languages and represent their inherent shared characteristics.", "datePublished":"2022-07-29T00:00:00", "version":"v1.1.1", "license":"http://purl.org/NET/rdflicense/cc-by-nc-sa4.0", "author":[{"@type":"Person","name":"Ana Iglesias Molina (Ontology Engineering Group)"}], "contributor":[{"@type":"Person","name":"Andrea Cimmino (Ontology Engineering Group)"},{"@type":"Person","name":"David Chaves Fraga (Ontology Engineering Group)"},{"@type":"Person","name":"Edna Ruckhaus (Ontology Engineering Group)"},{"@type":"Person","name":"Oscar Corcho (Ontology Engineering Group)"},{"@type":"Person","name":"Raúl García Castro (Ontology Engineering Group)"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://w3id.org/rml/star/","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://w3id.org/rml/star/","name":"RML-star", "headline":"RML module for generating RDF-star graphs", "datePublished":"Thu Apr 13 08:32:34 UTC 2023"}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -50,7 +50,6 @@ function loadTOC(){
       $("#overview").load("sections/overview-en.html"); 
       $("#description").load("sections/description-en.html"); 
       $("#references").load("sections/references-en.html"); 
-      $("#changelog").load("sections/changelog-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
     </script> 
@@ -60,28 +59,13 @@ function loadTOC(){
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<h1>Conceptual Mapping</h1>
-<h2>Release 2022-07-29T00:00:00</h2>
+<h1>RML-star</h1>
 
 
 <dl>
-<dt>This version:</dt>
-<dd><a href="http://vocab.linkeddata.es/def/conceptual-mapping">http://vocab.linkeddata.es/def/conceptual-mapping</a></dd>
-<dt>Previous version:</dt>
-<dd><a href="http://vocab.linkeddata.es/def/conceptual-mapping/1.0.0/">http://vocab.linkeddata.es/def/conceptual-mapping/1.0.0/</a></dd>
-<dt>Revision:</dt>
-<dd>v1.1.1</dd>
-<dt>Authors:</dt>
-<dd>Ana Iglesias Molina (Ontology Engineering Group)</dd>
-
-<dt>Contributors:</dt>
-<dd>Andrea Cimmino (Ontology Engineering Group)</dd><dd>David Chaves Fraga (Ontology Engineering Group)</dd><dd>Edna Ruckhaus (Ontology Engineering Group)</dd><dd>Oscar Corcho (Ontology Engineering Group)</dd><dd>Raúl García Castro (Ontology Engineering Group)</dd>
-
-<dt>Publisher:</dt>
-<dd><a href="https://oeg.fi.upm.es/">https://oeg.fi.upm.es/</a></dd>
-<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://purl.org/NET/rdflicense/cc-by-nc-sa4.0" target="_blank"><img src="https://img.shields.io/badge/License-http://purl.org/NET/rdflicense/cc_by_nc_sa4.0-blue.svg" alt="http://purl.org/NET/rdflicense/cc-by-nc-sa4.0" /></a>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.rdf" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://insertlicenseURIhere.org" target="_blank"><img src="https://img.shields.io/badge/License-license%20name%20goes%20here-blue.svg" alt="http://insertlicenseURIhere.org" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Ana Iglesias Molina (Ontology Engineering Group). Conceptual Mapping. Revision: v1.1.1. Retrieved from: http://vocab.linkeddata.es/def/conceptual-mapping</dd>
+<dd> RML-star.</dd>
 </dl>
 
 <a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
@@ -96,7 +80,6 @@ function loadTOC(){
      <div id="description"></div>
      <div id="crossref"></div>
      <div id="references"></div>
-     <div id="changelog"></div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>

@@ -170,7 +170,7 @@
 
     <owl:Class rdf:about="http://w3id.org/rml/StarMap">
         <rdfs:comment xml:lang="eb">Represents a star map able to generate RDF-star triples.</rdfs:comment>
-        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/core/"/>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/star/"/>
         <rdfs:label>Star Map</rdfs:label>
     </owl:Class>
     
