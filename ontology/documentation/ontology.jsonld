@@ -14,6 +14,9 @@
   "@id" : "http://purl.org/dc/elements/1.1/issued",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
+  "@id" : "http://purl.org/dc/elements/1.1/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
   "@id" : "http://purl.org/dc/elements/1.1/modified",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -82,9 +85,21 @@
 }, {
   "@id" : "http://w3id.org/rml/star/",
   "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/contributor" : [ {
+    "@value" : "Ana Iglesias Molina"
+  }, {
+    "@value" : "Anastasia Dimou"
+  }, {
+    "@value" : "David Chaves Fraga"
+  }, {
+    "@value" : "Julián Arenas Guerrero"
+  } ],
   "http://purl.org/dc/elements/1.1/description" : [ {
     "@language" : "en",
     "@value" : "RML module for generating RDF-star graphs"
+  } ],
+  "http://purl.org/dc/elements/1.1/license" : [ {
+    "@id" : "http://purl.org/NET/rdflicense/cc-by4.0"
   } ],
   "http://purl.org/dc/elements/1.1/modified" : [ {
     "@value" : "2023-04-05"

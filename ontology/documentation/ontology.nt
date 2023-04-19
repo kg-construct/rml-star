@@ -1,5 +1,10 @@
 <http://w3id.org/rml/star/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/contributor> "Ana Iglesias Molina" .
+<http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/contributor> "Anastasia Dimou" .
+<http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/contributor> "David Chaves Fraga" .
+<http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/contributor> "Julián Arenas Guerrero" .
 <http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/description> "RML module for generating RDF-star graphs"@en .
+<http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/license> <http://purl.org/NET/rdflicense/cc-by4.0> .
 <http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/modified> "2023-04-05" .
 <http://w3id.org/rml/star/> <http://purl.org/dc/elements/1.1/title> "RML-star"@en .
 <http://w3id.org/rml/star/> <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/star/" .
@@ -26,6 +31,9 @@
 # 
 # http://purl.org/dc/elements/1.1/issued
 <http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
 # 
 # http://purl.org/dc/elements/1.1/modified
 <http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .

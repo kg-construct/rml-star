@@ -15,6 +15,11 @@
                         dc:description "RML module for generating RDF-star graphs"@en ;
                         dc:modified "2023-04-05" ;
                         dc:title "RML-star"@en ;
+                        dc:contributor "Ana Iglesias Molina" ;
+                        dc:contributor "Anastasia Dimou" ;
+                        dc:contributor "David Chaves Fraga" ;
+                        dc:contributor "Julián Arenas Guerrero" ;
+                        dc:license <http://purl.org/NET/rdflicense/cc-by4.0> ;
                         vann:preferredNamespaceUri "http://w3id.org/rml/star/" .
 
 #################################################################

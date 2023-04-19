@@ -7,7 +7,12 @@
 @base <http://w3id.org/rml/star/> .
 
 <http://w3id.org/rml/star/> rdf:type owl:Ontology ;
+                             <http://purl.org/dc/elements/1.1/contributor> "Ana Iglesias Molina" ,
+                                                                           "Anastasia Dimou" ,
+                                                                           "David Chaves Fraga" ,
+                                                                           "Julián Arenas Guerrero" ;
                              <http://purl.org/dc/elements/1.1/description> "RML module for generating RDF-star graphs"@en ;
+                             <http://purl.org/dc/elements/1.1/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
                              <http://purl.org/dc/elements/1.1/modified> "2023-04-05" ;
                              <http://purl.org/dc/elements/1.1/title> "RML-star"@en ;
                              <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/star/" .
@@ -34,6 +39,10 @@
 
 ###  http://purl.org/dc/elements/1.1/issued
 <http://purl.org/dc/elements/1.1/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/license
+<http://purl.org/dc/elements/1.1/license> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/elements/1.1/modified

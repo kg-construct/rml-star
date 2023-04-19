@@ -4,5 +4,13 @@
 @prefix : <> .
 <..\index-en.html> a prov:Entity;
 	 dc:title "RML-star";
+	 prov:wasAttributedTo :agent0;
+	 prov:wasAttributedTo :agent1;
+	 prov:wasAttributedTo :agent2;
+	 prov:wasAttributedTo :agent3;
 	 prov:wasAttributedTo <https://github.com/dgarijo/Widoco/>,<http://www.essepuntato.it/lode/>;
 .
+:agent0 a prov:Agent; foaf:name "Ana Iglesias Molina".
+:agent1 a prov:Agent; foaf:name "Anastasia Dimou".
+:agent2 a prov:Agent; foaf:name "David Chaves Fraga".
+:agent3 a prov:Agent; foaf:name "Julián Arenas Guerrero".

@@ -12,7 +12,12 @@
      xmlns:vaem="http://www.linkedmodel.org/schema/vaem#"
      xmlns:vann="http://purl.org/vocab/vann/">
     <owl:Ontology rdf:about="http://w3id.org/rml/star/">
+        <dc:contributor>Ana Iglesias Molina</dc:contributor>
+        <dc:contributor>Anastasia Dimou</dc:contributor>
+        <dc:contributor>David Chaves Fraga</dc:contributor>
+        <dc:contributor>Julián Arenas Guerrero</dc:contributor>
         <dc:description xml:lang="en">RML module for generating RDF-star graphs</dc:description>
+        <dc:license rdf:resource="http://purl.org/NET/rdflicense/cc-by4.0"/>
         <dc:modified>2023-04-05</dc:modified>
         <dc:title xml:lang="en">RML-star</dc:title>
         <vann:preferredNamespaceUri>http://w3id.org/rml/star/</vann:preferredNamespaceUri>
@@ -64,6 +69,13 @@
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
     
 
 
