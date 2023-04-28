@@ -1,9 +1,31 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rml: <http://w3id.org/rml/core/> .
-@prefix rmls: <http://w3id.org/rml/core/star/> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -11,12 +33,11 @@
     sh:description """
     Represents a non asserted triples map.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
-    rmls:NonAssertedTriplesMap requires exactly one rml:subject or 
+    NonAssertedTriplesMap requires exactly one rml:subject or 
     one rml:subjectMap and zero or more rml:predicateObjectMaps.
     """,
-        "rmls:NonAssertedTriplesMap" ;
+        "NonAssertedTriplesMap" ;
     sh:property [ sh:description """
         A logical source is any source that is mapped to RDF triples.
         """ ;
@@ -25,7 +46,7 @@
         Exactly one rml:logicalSource is required to access the data source.
         """ ;
             sh:minCount 1 ;
-            sh:name "rml:logicalSource" ;
+            sh:name "logicalSource" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:logicalSource ],
         [ sh:description """
@@ -36,98 +57,94 @@
         Either one rml:subject or one rml:SubjectMap is required, not both.
         """ ;
             sh:minCount 1 ;
-            sh:name "rml:subjectMap/rml:subject" ;
+            sh:name "subjectMap/subject" ;
             sh:path [ sh:alternativePath ( rml:subjectMap rml:subject ) ] ],
         [ sh:description """
-        A SubjectMap element to generate a subject from a logical table row or
-        iterator.
+        A Subject Map element to generate a subject for RDF triples.
         """ ;
             sh:message """
         rml:SubjectMap must be an IRI or blank node.
         """ ;
-            sh:name "rml:subjectMap" ;
+            sh:name "subjectMap" ;
             sh:node <http://schema.org/RMLSubjectMapShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:subjectMap ],
         [ sh:description """
-        An IRI reference for use as subject for all the RDF triples generated 
-        from a logical table row or iterator.
+        An IRI reference for use as subject for all generated RDF triples.
         """ ;
             sh:message """
         rml:subject must be an IRI or blank node.
         """ ;
-            sh:name "rml:subject" ;
+            sh:name "subject" ;
             sh:node <http://schema.org/RMLsubjectShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:subject ],
         [ sh:description """
-        A PredicateObjectMap element to generate (predicate, object) pair from 
-        a logical table row.
+        A Predicate Object Map element to generate (predicate, object) pair.
         """ ;
             sh:message """
         rml:PredicateObjectMap must be an IRI or blank node.
         """ ;
             sh:minCount 0 ;
-            sh:name "rml:predicateObjectMap" ;
+            sh:name "predicateObjectMap" ;
             sh:node <http://schema.org/RMLPredicateObjectMapShape> ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:predicateObjectMap ] ;
-    sh:targetClass <http://w3id.org/rml/star/NonAssertedTriplesMap> .
+    sh:targetClass rml:NonAssertedTriplesMap .
 
 <http://schema.org/RMLSStarMapShape> a sh:NodeShape ;
     sh:description """
-    Represents a star map.
+    Represents a Star Map.
     """ ;
-    sh:ignoredProperties ( rdf:type ) ;
     sh:message """
-    rmls:StarMap requires exactly one rml:subject or one rml:subjectMap and zero
+    Star Map requires exactly one rml:subject or one rml:subjectMap and zero
     or more rml:predicateObjectMaps
     """,
-        "rmls:StarMap" ;
+        "StarMap" ;
     sh:property [ sh:description """
 
         """ ;
             sh:maxCount 1 ;
             sh:message """
-        Exactly one rmls:quotedTriplesMap is required.
+        Exactly one rml:quotedTriplesMap is required.
         """ ;
             sh:minCount 1 ;
-            sh:name "rmls:quotedTriplesMap" ;
+            sh:name "quotedTriplesMap" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path <http://w3id.org/rml/star/quotedTriplesMap> ],
+            sh:path rml:quotedTriplesMap ],
         [ sh:description """
-        Specifies the join condition for joining the child logical table with 
-        the parent logical table of the foreign key constraint.
+        Specifies the join condition for joining the child data source with 
+        the parent data source of the foreign key constraint.
         """ ;
             sh:message """
         rml:joinCondition must specify an rml:parent and rml:child.
         """ ;
-            sh:name "rml:joinCondition" ;
+            sh:name "joinCondition" ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path rml:joinCondition ;
             sh:property [ sh:datatype xsd:string ;
                     sh:description """
-            Names a column in the parent table of a join.
+            Names a property in the parent data source of a join.
             """ ;
                     sh:maxCount 1 ;
                     sh:message """
             rml:parent must be string and only occur once.
             """ ;
                     sh:minCount 1 ;
-                    sh:name "rml:parent" ;
+                    sh:name "parent" ;
                     sh:nodeKind sh:Literal ;
                     sh:path rml:parent ],
                 [ sh:datatype xsd:string ;
                     sh:description """
-            Names a column in the child table of a join.
+            Names a property in the child data source of a join.
             """ ;
                     sh:maxCount 1 ;
                     sh:message """
             rml:child must be string and only occur once.
             """ ;
                     sh:minCount 1 ;
-                    sh:name "rml:child" ;
+                    sh:name "child" ;
                     sh:nodeKind sh:Literal ;
                     sh:path rml:child ] ] ;
-    sh:targetClass <http://w3id.org/rml/star/StarMap> .
+    sh:targetClass rml:StarMap .
 
