@@ -1,0 +1,71 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcmitype: <http://purl.org/dc/dcmitype/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix schema: <https://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://schema.org/RMLNonAssertedTriplesMapShape> a sh:NodeShape ;
+    sh:and ( <http://schema.org/RMLTriplesMapPropertiesShape> [ ] ) ;
+    sh:description """
+    Represents a Non Asserted Triples Map.
+    """ ;
+    sh:message """
+    Non Asserted Triples Map requires exactly one rml:subject or 
+    one rml:subjectMap and zero or more rml:predicateObjectMaps
+    and exactly one rml:logicalSource.
+    """,
+        "NonAssertedTriplesMap" ;
+    sh:targetClass rml:NonAssertedTriplesMap .
+
+<http://schema.org/RMLStarMapShape> a sh:NodeShape ;
+    sh:and ( <http://schema.org/RMLJoinConditionPropertiesShape> [ sh:description """
+            An quoted TriplesMap element to generate a RDF-star triple as 
+            subject or object or another triple from a logical source record.
+            """ ;
+                sh:maxCount 1 ;
+                sh:message """
+            Exactly one rml:quotedTriplesMap is required.
+            """ ;
+                sh:minCount 1 ;
+                sh:name "quotedTriplesMap" ;
+                sh:nodeKind sh:BlankNodeOrIRI ;
+                sh:path rml:quotedTriplesMap ] ) ;
+    sh:description """
+    Represents a Star Map.
+    """ ;
+    sh:message """
+    Star Map requires exactly one rml:quotedTriplesMap and
+    zero or more rml:joinCondition.
+    """,
+        "StarMap" ;
+    sh:targetClass rml:StarMap .
+
+<http://schema.org/RMLJoinConditionPropertiesShape> a sh:NodeShape .
+
+<http://schema.org/RMLTriplesMapPropertiesShape> a sh:NodeShape .
+

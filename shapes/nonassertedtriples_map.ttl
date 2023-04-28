@@ -1,0 +1,32 @@
+###############################################################################
+# RMLS Non Asserted Triples Map shape                                         #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2020 - 2023)              #
+###############################################################################
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Validate an RMLS Non Asserted Triples Map
+schema:RMLNonAssertedTriplesMapShape
+    a sh:NodeShape ;
+    sh:targetClass rml:NonAssertedTriplesMap ;
+    sh:message "NonAssertedTriplesMap" ;
+    sh:description """
+    Represents a Non Asserted Triples Map.
+    """ ;
+    sh:message """
+    Non Asserted Triples Map requires exactly one rml:subject or 
+    one rml:subjectMap and zero or more rml:predicateObjectMaps
+    and exactly one rml:logicalSource.
+    """ ;
+
+    sh:and (
+        # Inherited shapes
+        schema:RMLTriplesMapPropertiesShape
+        # Non Asserted Triples Map specific shapes
+        [
+        ]
+    ) ;
+.

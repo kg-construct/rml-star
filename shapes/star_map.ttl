@@ -1,0 +1,43 @@
+###############################################################################
+# RML Star Map shape                                                          #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+###############################################################################
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Validate an RMLS Star Map
+schema:RMLStarMapShape
+    a sh:NodeShape ;
+    sh:targetClass rml:StarMap ;
+    sh:message "StarMap" ;
+    sh:description """
+    Represents a Star Map.
+    """ ;
+    sh:message """
+    Star Map requires exactly one rml:quotedTriplesMap and
+    zero or more rml:joinCondition.
+    """ ;
+
+    sh:and (
+        # Inherited shapes
+        schema:RMLJoinConditionPropertiesShape
+        # Star Map specific shapes
+        [
+            sh:path rml:quotedTriplesMap ;
+            sh:name "quotedTriplesMap" ;
+            sh:description """
+            An quoted TriplesMap element to generate a RDF-star triple as 
+            subject or object or another triple from a logical source record.
+            """ ;
+            sh:message """
+            Exactly one rml:quotedTriplesMap is required.
+            """ ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:minCount 1 ;
+            sh:maxCount 1 ;
+        ]
+    ) ;
+.
