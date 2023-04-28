@@ -9,7 +9,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Validate an RMLS Star Map
-schema:RMLSStarMapShape
+schema:RMLStarMapShape
     a sh:NodeShape ;
     sh:targetClass rml:StarMap ;
     sh:message "StarMap" ;
@@ -21,63 +21,23 @@ schema:RMLSStarMapShape
     zero or more rml:joinCondition.
     """ ;
 
-    # rml:quotedTriplesMap
-    sh:property [
-        sh:path rml:quotedTriplesMap ;
-        sh:name "quotedTriplesMap" ;
-        sh:description """
-
-        """ ;
-        sh:message """
-        Exactly one rml:quotedTriplesMap is required.
-        """ ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-    ] ;
-
-    sh:property [
-        sh:path rml:joinCondition ;
-        sh:name "joinCondition" ;
-        sh:description """
-        Specifies the join condition for joining the child logical source
-        with the parent logical source of the foreign key constraint.
-        """ ;
-        sh:message """
-        rml:joinCondition must specify an rml:parent and rml:child.
-        """ ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-
-        # rml:parent
-        sh:property [
-            sh:path rml:parent ;
-            sh:name "parent" ;
+    sh:and (
+        # Inherited shapes
+        schema:RMLJoinConditionPropertiesShape
+        # Star Map specific shapes
+        [
+            sh:path rml:quotedTriplesMap ;
+            sh:name "quotedTriplesMap" ;
             sh:description """
-            Names a property in the parent data source of a join.
+            An quoted TriplesMap element to generate a RDF-star triple as 
+            subject or object or another triple from a logical source record.
             """ ;
             sh:message """
-            rml:parent must be string and only occur once.
+            Exactly one rml:quotedTriplesMap is required.
             """ ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
-        ] ;
-
-        # rml:child
-        sh:property [
-            sh:path rml:child ;
-            sh:name "child" ;
-            sh:description """
-            Names a property in the child data source of a join.
-            """ ;
-            sh:message """
-            rml:child must be string and only occur once.
-            """ ;
-            sh:minCount 1 ;
-            sh:maxCount 1 ;
-            sh:nodeKind sh:Literal ;
-            sh:datatype xsd:string ;
-        ] ;
-    ] ;
+        ]
+    ) ;
 .

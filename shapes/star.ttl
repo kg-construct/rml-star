@@ -29,122 +29,43 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://schema.org/RMLSNonAssertedTriplesMapShape> a sh:NodeShape ;
+<http://schema.org/RMLNonAssertedTriplesMapShape> a sh:NodeShape ;
+    sh:and ( <http://schema.org/RMLTriplesMapPropertiesShape> [ ] ) ;
     sh:description """
-    Represents a non asserted triples map.
+    Represents a Non Asserted Triples Map.
     """ ;
     sh:message """
-    NonAssertedTriplesMap requires exactly one rml:subject or 
-    one rml:subjectMap and zero or more rml:predicateObjectMaps.
+    Non Asserted Triples Map requires exactly one rml:subject or 
+    one rml:subjectMap and zero or more rml:predicateObjectMaps
+    and exactly one rml:logicalSource.
     """,
         "NonAssertedTriplesMap" ;
-    sh:property [ sh:description """
-        A logical source is any source that is mapped to RDF triples.
-        """ ;
-            sh:maxCount 1 ;
-            sh:message """
-        Exactly one rml:logicalSource is required to access the data source.
-        """ ;
-            sh:minCount 1 ;
-            sh:name "logicalSource" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:logicalSource ],
-        [ sh:description """
-        Either one rml:subject or one rml:SubjectMap is required, not both.
-        """ ;
-            sh:maxCount 1 ;
-            sh:message """
-        Either one rml:subject or one rml:SubjectMap is required, not both.
-        """ ;
-            sh:minCount 1 ;
-            sh:name "subjectMap/subject" ;
-            sh:path [ sh:alternativePath ( rml:subjectMap rml:subject ) ] ],
-        [ sh:description """
-        A Subject Map element to generate a subject for RDF triples.
-        """ ;
-            sh:message """
-        rml:SubjectMap must be an IRI or blank node.
-        """ ;
-            sh:name "subjectMap" ;
-            sh:node <http://schema.org/RMLSubjectMapShape> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:subjectMap ],
-        [ sh:description """
-        An IRI reference for use as subject for all generated RDF triples.
-        """ ;
-            sh:message """
-        rml:subject must be an IRI or blank node.
-        """ ;
-            sh:name "subject" ;
-            sh:node <http://schema.org/RMLsubjectShape> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:subject ],
-        [ sh:description """
-        A Predicate Object Map element to generate (predicate, object) pair.
-        """ ;
-            sh:message """
-        rml:PredicateObjectMap must be an IRI or blank node.
-        """ ;
-            sh:minCount 0 ;
-            sh:name "predicateObjectMap" ;
-            sh:node <http://schema.org/RMLPredicateObjectMapShape> ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:predicateObjectMap ] ;
     sh:targetClass rml:NonAssertedTriplesMap .
 
-<http://schema.org/RMLSStarMapShape> a sh:NodeShape ;
+<http://schema.org/RMLStarMapShape> a sh:NodeShape ;
+    sh:and ( <http://schema.org/RMLJoinConditionPropertiesShape> [ sh:description """
+            An quoted TriplesMap element to generate a RDF-star triple as 
+            subject or object or another triple from a logical source record.
+            """ ;
+                sh:maxCount 1 ;
+                sh:message """
+            Exactly one rml:quotedTriplesMap is required.
+            """ ;
+                sh:minCount 1 ;
+                sh:name "quotedTriplesMap" ;
+                sh:nodeKind sh:BlankNodeOrIRI ;
+                sh:path rml:quotedTriplesMap ] ) ;
     sh:description """
     Represents a Star Map.
     """ ;
     sh:message """
-    Star Map requires exactly one rml:subject or one rml:subjectMap and zero
-    or more rml:predicateObjectMaps
+    Star Map requires exactly one rml:quotedTriplesMap and
+    zero or more rml:joinCondition.
     """,
         "StarMap" ;
-    sh:property [ sh:description """
-
-        """ ;
-            sh:maxCount 1 ;
-            sh:message """
-        Exactly one rml:quotedTriplesMap is required.
-        """ ;
-            sh:minCount 1 ;
-            sh:name "quotedTriplesMap" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:quotedTriplesMap ],
-        [ sh:description """
-        Specifies the join condition for joining the child data source with 
-        the parent data source of the foreign key constraint.
-        """ ;
-            sh:message """
-        rml:joinCondition must specify an rml:parent and rml:child.
-        """ ;
-            sh:name "joinCondition" ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path rml:joinCondition ;
-            sh:property [ sh:datatype xsd:string ;
-                    sh:description """
-            Names a property in the parent data source of a join.
-            """ ;
-                    sh:maxCount 1 ;
-                    sh:message """
-            rml:parent must be string and only occur once.
-            """ ;
-                    sh:minCount 1 ;
-                    sh:name "parent" ;
-                    sh:nodeKind sh:Literal ;
-                    sh:path rml:parent ],
-                [ sh:datatype xsd:string ;
-                    sh:description """
-            Names a property in the child data source of a join.
-            """ ;
-                    sh:maxCount 1 ;
-                    sh:message """
-            rml:child must be string and only occur once.
-            """ ;
-                    sh:minCount 1 ;
-                    sh:name "child" ;
-                    sh:nodeKind sh:Literal ;
-                    sh:path rml:child ] ] ;
     sh:targetClass rml:StarMap .
+
+<http://schema.org/RMLJoinConditionPropertiesShape> a sh:NodeShape .
+
+<http://schema.org/RMLTriplesMapPropertiesShape> a sh:NodeShape .
 
