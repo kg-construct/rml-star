@@ -17,7 +17,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rml: <http://w3id.org/rml/> .
-@prefix schema: <https://schema.org/> .
+@prefix : <http://w3id.org/rml/shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -29,8 +29,8 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://schema.org/RMLNonAssertedTriplesMapShape> a sh:NodeShape ;
-    sh:and ( <http://schema.org/RMLTriplesMapPropertiesShape> [ ] ) ;
+<http://w3id.org/rml/shapes/RMLNonAssertedTriplesMapShape> a sh:NodeShape ;
+    sh:and ( <http://w3id.org/rml/shapes/RMLTriplesMapPropertiesShape> [ ] ) ;
     sh:description """
     Represents a Non Asserted Triples Map.
     """ ;
@@ -42,8 +42,8 @@
         "NonAssertedTriplesMap" ;
     sh:targetClass rml:NonAssertedTriplesMap .
 
-<http://schema.org/RMLStarMapShape> a sh:NodeShape ;
-    sh:and ( <http://schema.org/RMLJoinConditionPropertiesShape> [ sh:description """
+<http://w3id.org/rml/shapes/RMLStarMapShape> a sh:NodeShape ;
+    sh:and ( <http://w3id.org/rml/shapes/RMLJoinConditionPropertiesShape> [ sh:description """
             An quoted TriplesMap element to generate a RDF-star triple as 
             subject or object or another triple from a logical source record.
             """ ;
@@ -65,7 +65,7 @@
         "StarMap" ;
     sh:targetClass rml:StarMap .
 
-<http://schema.org/RMLJoinConditionPropertiesShape> a sh:NodeShape .
+<http://w3id.org/rml/shapes/RMLJoinConditionPropertiesShape> a sh:NodeShape .
 
-<http://schema.org/RMLTriplesMapPropertiesShape> a sh:NodeShape .
+<http://w3id.org/rml/shapes/RMLTriplesMapPropertiesShape> a sh:NodeShape .
 
