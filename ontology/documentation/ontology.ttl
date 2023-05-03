@@ -90,10 +90,18 @@
 #    Classes
 #################################################################
 
+###  http://w3id.org/rml/AssertedTriplesMap
+<http://w3id.org/rml/AssertedTriplesMap> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://w3id.org/rml/TriplesMap> ;
+                                         rdfs:comment "A type of Triples Map that is quoted and asserted in the resulting graph."@en ;
+                                         rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
+                                         rdfs:label "Asserted Triples Map" .
+
+
 ###  http://w3id.org/rml/NonAssertedTriplesMap
 <http://w3id.org/rml/NonAssertedTriplesMap> rdf:type owl:Class ;
                                             rdfs:subClassOf <http://w3id.org/rml/TriplesMap> ;
-                                            rdfs:comment "A type of Triples Map that is not asserted in the resulting graph"@en ;
+                                            rdfs:comment "A type of Triples Map that is quoted but not asserted in the resulting graph"@en ;
                                             rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
                                             rdfs:label "Non Asserted Triples Map" .
 

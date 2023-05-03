@@ -83,10 +83,17 @@
 # #################################################################
 # 
 # 
+# http://w3id.org/rml/AssertedTriplesMap
+<http://w3id.org/rml/AssertedTriplesMap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://w3id.org/rml/AssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/rml/TriplesMap> .
+<http://w3id.org/rml/AssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of Triples Map that is quoted and asserted in the resulting graph."@en .
+<http://w3id.org/rml/AssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/star/> .
+<http://w3id.org/rml/AssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#label> "Asserted Triples Map" .
+# 
 # http://w3id.org/rml/NonAssertedTriplesMap
 <http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://w3id.org/rml/TriplesMap> .
-<http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of Triples Map that is not asserted in the resulting graph"@en .
+<http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#comment> "A type of Triples Map that is quoted but not asserted in the resulting graph"@en .
 <http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://w3id.org/rml/star/> .
 <http://w3id.org/rml/NonAssertedTriplesMap> <http://www.w3.org/2000/01/rdf-schema#label> "Non Asserted Triples Map" .
 # 

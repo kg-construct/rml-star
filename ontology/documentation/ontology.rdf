@@ -165,12 +165,24 @@
     
 
 
+    <!-- http://w3id.org/rml/AssertedTriplesMap -->
+
+
+    <owl:Class rdf:about="http://w3id.org/rml/AssertedTriplesMap">
+        <rdfs:subClassOf rdf:resource="http://w3id.org/rml/TriplesMap"/>
+        <rdfs:comment xml:lang="en">A type of Triples Map that is quoted and asserted in the resulting graph.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/star/"/>
+        <rdfs:label>Asserted Triples Map</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://w3id.org/rml/NonAssertedTriplesMap -->
 
 
     <owl:Class rdf:about="http://w3id.org/rml/NonAssertedTriplesMap">
         <rdfs:subClassOf rdf:resource="http://w3id.org/rml/TriplesMap"/>
-        <rdfs:comment xml:lang="en">A type of Triples Map that is not asserted in the resulting graph</rdfs:comment>
+        <rdfs:comment xml:lang="en">A type of Triples Map that is quoted but not asserted in the resulting graph</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://w3id.org/rml/star/"/>
         <rdfs:label>Non Asserted Triples Map</rdfs:label>
     </owl:Class>
