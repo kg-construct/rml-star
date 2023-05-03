@@ -4,7 +4,12 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
+<<<<<<< HEAD
 :firstTM a rml:NonAssertedTriplesMap ; # This refers to the y statement in the rdf-star
+=======
+
+:firstTM a rml:NonAssertedTriplesMap ; 
+>>>>>>> 4dea910 (test-cases: move to invalid/valid dir and fix prefixes)
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
@@ -19,7 +24,15 @@
         ]
     ] .
 
+<<<<<<< HEAD
 :secondTM a rml:TriplesMap ; # This refers to the x statement in the rdf-star
+=======
+<<<<<<< HEAD:test-cases/RMLSTARTC006a/mapping.ttl
+:secondTM a rml:AssertedTriplesMap ; 
+=======
+:secondTM a rml:TriplesMap ; # This refers to the x statement in the rdf-star
+>>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC006a/mapping.ttl
+>>>>>>> 4dea910 (test-cases: move to invalid/valid dir and fix prefixes)
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV

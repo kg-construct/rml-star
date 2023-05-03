@@ -4,6 +4,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4dea910 (test-cases: move to invalid/valid dir and fix prefixes)
 :firstTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data1.csv";
@@ -19,7 +23,15 @@
         ]
     ] .
 
+<<<<<<< HEAD
 :secondTM a rml:TriplesMap ;
+=======
+<<<<<<< HEAD:test-cases/RMLSTARTC007b/mapping.ttl
+:secondTM a rml:AssertedTriplesMap ;
+=======
+:secondTM a rml:TriplesMap ;
+>>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC007b/mapping.ttl
+>>>>>>> 4dea910 (test-cases: move to invalid/valid dir and fix prefixes)
     rml:logicalSource [
         rml:source "data2.csv";
         rml:referenceFormulation rml:CSV

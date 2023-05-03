@@ -19,7 +19,15 @@
         ]
     ] .
 
+<<<<<<< HEAD
 :secondTM a rml:TriplesMap ;
+=======
+<<<<<<< HEAD:test-cases/RMLSTARTC005a/mapping.ttl
+:secondTM a rml:AssertedTriplesMap ;
+=======
+:secondTM a rml:TriplesMap ;
+>>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC005a/mapping.ttl
+>>>>>>> 4dea910 (test-cases: move to invalid/valid dir and fix prefixes)
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
