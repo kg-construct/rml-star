@@ -2,14 +2,14 @@
 # RML Star Map shape                                                          #
 # Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
 ###############################################################################
-@prefix schema: <http://schema.org/> .
+@prefix : <http://w3id.org/rml/shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Validate an RMLS Star Map
-schema:RMLStarMapShape
+:RMLStarMapShape
     a sh:NodeShape ;
     sh:targetClass rml:StarMap ;
     sh:message "StarMap" ;
@@ -23,7 +23,7 @@ schema:RMLStarMapShape
 
     sh:and (
         # Inherited shapes
-        schema:RMLJoinConditionPropertiesShape
+        :RMLJoinConditionPropertiesShape
         # Star Map specific shapes
         [
             sh:path rml:quotedTriplesMap ;
