@@ -17,7 +17,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rml: <http://w3id.org/rml/> .
-@prefix : <http://w3id.org/rml/shapes/> .
+@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
@@ -44,7 +44,7 @@
 
 <http://w3id.org/rml/shapes/RMLStarMapShape> a sh:NodeShape ;
     sh:and ( <http://w3id.org/rml/shapes/RMLJoinConditionPropertiesShape> [ sh:description """
-            An quoted TriplesMap element to generate a RDF-star triple as 
+            An Quoted Triples Map element to generate a RDF-star triple as 
             subject or object or another triple from a logical source record.
             """ ;
                 sh:maxCount 1 ;
@@ -54,7 +54,13 @@
                 sh:minCount 1 ;
                 sh:name "quotedTriplesMap" ;
                 sh:nodeKind sh:BlankNodeOrIRI ;
-                sh:path rml:quotedTriplesMap ] ) ;
+                sh:path rml:quotedTriplesMap ] [ sh:message """
+            An Quoted Triples Map may never be used for generating a predicate.
+            """ ;
+                sh:name "PredicateMap" ;
+                sh:property [ sh:minCount 1 ;
+                        sh:path rml:predicate ] ;
+                sh:targetObjectsOf rml:predicateObjectMap ] ) ;
     sh:description """
     Represents a Star Map.
     """ ;

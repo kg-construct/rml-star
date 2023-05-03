@@ -16,7 +16,7 @@ from rdflib import Graph
 from mapping_validator import MappingValidator
 
 TEST_CASES_DIR = os.path.join(os.path.abspath('../test-cases'),
-                              '*/mapping.ttl')
+                              '*/*/mapping.ttl')
 STAR_SHAPE_FILE = os.path.abspath('star.ttl')
 SHACL_SHAPE_FILE = os.path.abspath('shacl.ttl')
 
@@ -45,7 +45,11 @@ class MappingValidatorTests(unittest.TestCase):
         rules test cases.
         """
         print(f'Testing validation with: {path}')
-        self._validate_rules(path)
+        if 'invalid' in path:
+            with self.assertRaises(Exception):
+                self._validate_rules(path)
+        else:
+            self._validate_rules(path)
 
     def test_validation_shapes(self) -> None:
         """
