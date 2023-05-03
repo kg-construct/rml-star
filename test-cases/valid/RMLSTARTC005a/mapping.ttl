@@ -1,7 +1,5 @@
-@prefix rr: <http://www.w3.org/ns/r2rml#> .
-@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://w3id.org/rml/> .
 @prefix ex: <http://example/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
@@ -10,29 +8,33 @@
 :firstTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
-        rml:referenceFormulation ql:CSV
+        rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
-        rr:template "http://example/{c1}"
+        rml:template "http://example/{c1}"
     ];
-    rr:predicateObjectMap [
-        rr:predicate ex:p ;
+    rml:predicateObjectMap [
+        rml:predicate ex:p ;
         rml:objectMap [
-            rr:template "http://example/{c2}"
+            rml:template "http://example/{c2}"
         ]
     ] .
 
+<<<<<<< HEAD:test-cases/RMLSTARTC005a/mapping.ttl
 :secondTM a rml:AssertedTriplesMap ;
+=======
+:secondTM a rml:TriplesMap ;
+>>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC005a/mapping.ttl
     rml:logicalSource [
         rml:source "data.csv";
-        rml:referenceFormulation ql:CSV
+        rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
             rml:quotedTriplesMap :firstTM
     ];
-    rr:predicateObjectMap [
-        rr:predicate ex:q ;
+    rml:predicateObjectMap [
+        rml:predicate ex:q ;
         rml:objectMap [
-            rr:template "http://example/{c3}"
+            rml:template "http://example/{c3}"
         ]
     ] .
