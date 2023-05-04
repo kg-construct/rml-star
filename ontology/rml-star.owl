@@ -92,10 +92,18 @@ foaf:name rdf:type owl:AnnotationProperty .
 #################################################################
 
 
+###  http://w3id.org/rml/AssertedTriplesMap
+:AssertedTriplesMap rdf:type owl:Class ;
+                       rdfs:subClassOf :TriplesMap ;
+                       rdfs:comment "A type of Triples Map that is quoted and asserted in the resulting graph."@en ;
+                       rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
+                       rdfs:label "Asserted Triples Map" .
+
+
 ###  http://w3id.org/rml/NonAssertedTriplesMap
 :NonAssertedTriplesMap rdf:type owl:Class ;
                        rdfs:subClassOf :TriplesMap ;
-                       rdfs:comment "A type of Triples Map that is not asserted in the resulting graph"@en ;
+                       rdfs:comment "A type of Triples Map that is quoted but not asserted in the resulting graph"@en ;
                        rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
                        rdfs:label "Non Asserted Triples Map" .
 
