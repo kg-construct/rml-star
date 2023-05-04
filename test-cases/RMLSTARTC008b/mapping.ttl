@@ -51,7 +51,7 @@
         ]
     ] .
 
-:centralJoinTM a rr:TriplesMap ;
+:centralJoinTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data2.csv";
         rml:referenceFormulation ql:CSV

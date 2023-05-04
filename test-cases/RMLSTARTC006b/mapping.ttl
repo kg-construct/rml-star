@@ -7,7 +7,7 @@
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
 
-:firstTM a rml:NonAssertedTriplesMap ; # This refers to the y statement in the rdf-star
+:firstTM a rml:NonAssertedTriplesMap ; 
     rml:logicalSource [
         rml:source "data1.csv";
         rml:referenceFormulation ql:CSV
@@ -22,7 +22,7 @@
         ]
     ] .
 
-:secondTM a rr:TriplesMap ; # This refers to the x statement in the rdf-star
+:secondTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data2.csv";
         rml:referenceFormulation ql:CSV

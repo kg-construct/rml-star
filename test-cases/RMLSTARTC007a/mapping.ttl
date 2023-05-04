@@ -21,7 +21,7 @@
         ]
     ] .
 
-:secondTM a rr:TriplesMap ;
+:secondTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation ql:CSV

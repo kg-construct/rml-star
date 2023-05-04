@@ -6,6 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
+
 :firstTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
@@ -21,7 +22,7 @@
         ]
     ] .
 
-:secondTM a rr:TriplesMap ;
+:secondTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation ql:CSV
