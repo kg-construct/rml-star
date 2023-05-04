@@ -49,11 +49,7 @@
         ]
     ] .
 
-<<<<<<< HEAD:test-cases/RMLSTARTC008b/mapping.ttl
 :centralJoinTM a rml:AssertedTriplesMap ;
-=======
-:centralJoinTM a rml:TriplesMap ;
->>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC008b/mapping.ttl
     rml:logicalSource [
         rml:source "data2.csv";
         rml:referenceFormulation rml:CSV

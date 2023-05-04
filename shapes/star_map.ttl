@@ -45,10 +45,16 @@
             sh:message """
             An Quoted Triples Map may never be used for generating a predicate.
             """ ;
-            sh:property [
-                sh:path rml:predicate ;
-                sh:minCount 1 ;
-            ] ;
+            sh:xone (
+                [
+                    sh:path rml:predicate ;
+                    sh:minCount 1 ;
+                ] 
+                [
+                    sh:path rml:predicateMap ;
+                    sh:minCount 1 ;
+                ] 
+            );
         ]
     ) ;
 .

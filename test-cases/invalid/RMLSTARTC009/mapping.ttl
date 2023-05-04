@@ -4,7 +4,7 @@
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
 
-:firstTM a rml:TriplesMap ;
+:firstTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
@@ -19,7 +19,7 @@
         ]
     ] .
 
-:secondTM a rml:NonAssertedTriplesMap, rml:TriplesMap ;
+:secondTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
