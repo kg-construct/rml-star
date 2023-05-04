@@ -4,11 +4,7 @@
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
 
-<<<<<<< HEAD:test-cases/RMLSTARTC001a/mapping.ttl
 :firstTM a rml:AssertedTriplesMap ;
-=======
-:firstTM a rml:TriplesMap ;
->>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC001a/mapping.ttl
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
@@ -24,11 +20,7 @@
         ]
     ] .
 
-<<<<<<< HEAD:test-cases/RMLSTARTC001a/mapping.ttl
 :secondTM a rml:AssertedTriplesMap ;
-=======
-:secondTM a rml:TriplesMap ;
->>>>>>> 89b675e (test-cases: move to invalid/valid dir and fix prefixes):test-cases/valid/RMLSTARTC001a/mapping.ttl
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
