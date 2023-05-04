@@ -4,7 +4,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
-:firstTM a rml:TriplesMap ;
+
+:firstTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
@@ -19,7 +20,7 @@
         ]
     ] .
 
-:secondTM a rml:TriplesMap ;
+:secondTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV
@@ -34,7 +35,7 @@
         ]
     ] .
 
-:thirdTM a rml:TriplesMap ;
+:thirdTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV

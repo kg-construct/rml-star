@@ -1,5 +1,7 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rml: <http://w3id.org/rml/> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix ex: <http://example/> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
@@ -7,29 +9,29 @@
 :firstTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
-        rml:referenceFormulation rml:CSV
+        rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rml:template "http://example/{c1}" 
+        rr:template "http://example/{c1}" 
     ];
-    rml:predicateObjectMap [
+    rr:predicateObjectMap [
         rml:quotedTriplesMap :secondTM ;
         rml:objectMap [
-            rml:template "http://example/{c4}"
+            rr:template "http://example/{c4}"
         ]
     ] .
 
 :secondTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
         rml:source "data.csv";
-        rml:referenceFormulation rml:CSV
+        rml:referenceFormulation ql:CSV
     ];
     rml:subjectMap [
-        rml:template "http://example/{c2}" 
+        rr:template "http://example/{c2}" 
     ];
-    rml:predicateObjectMap [
-        rml:predicate ex:p ;
+    rr:predicateObjectMap [
+        rr:predicate ex:p ;
         rml:objectMap [
-            rml:template "http://example/{c3}" 
+            rr:template "http://example/{c3}" 
         ]
     ] .

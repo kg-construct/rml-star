@@ -4,6 +4,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix : <http://example.org/> .
 @base <http://example.org/> .
+
 :firstTM a rml:NonAssertedTriplesMap ; # This refers to the y statement in the rdf-star
     rml:logicalSource [
         rml:source "data.csv";
@@ -19,7 +20,7 @@
         ]
     ] .
 
-:secondTM a rml:TriplesMap ; # This refers to the x statement in the rdf-star
+:secondTM a rml:AssertedTriplesMap ;  # This refers to the x statement in the rdf-star
     rml:logicalSource [
         rml:source "data.csv";
         rml:referenceFormulation rml:CSV

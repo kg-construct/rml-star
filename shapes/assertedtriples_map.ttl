@@ -1,5 +1,5 @@
 ###############################################################################
-# RML Non Asserted Triples Map shape                                          #
+# RML Asserted Triples Map shape                                              #
 # Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
 ###############################################################################
 @prefix : <http://w3id.org/rml/shapes/> .
@@ -8,16 +8,16 @@
 @prefix rml: <http://w3id.org/rml/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# Validate an RML Non Asserted Triples Map
-:RMLNonAssertedTriplesMapShape
+# Validate an RML Asserted Triples Map
+:RMLAssertedTriplesMapShape
     a sh:NodeShape ;
-    sh:targetClass rml:NonAssertedTriplesMap ;
-    sh:message "NonAssertedTriplesMap" ;
+    sh:targetClass rml:AssertedTriplesMap ;
+    sh:message "AssertedTriplesMap" ;
     sh:description """
-    Represents a Non Asserted Triples Map.
+    Represents a Asserted Triples Map.
     """ ;
     sh:message """
-    Non Asserted Triples Map requires exactly one rml:subject or 
+    Asserted Triples Map requires exactly one rml:subject or 
     one rml:subjectMap and zero or more rml:predicateObjectMaps
     and exactly one rml:logicalSource.
     """ ;
@@ -25,13 +25,13 @@
     sh:and (
         # Inherited shapes
         :RMLTriplesMapPropertiesShape
-        # Non Asserted Triples Map specific shapes
+        # Asserted Triples Map specific shapes
         [
             sh:path rdf:type ;
             sh:message """
-            Non Asserted Triples Map must have a rml:NonAssertedTriplesMap type.
+            Asserted Triples Map must have a rml:AssertedTriplesMap type.
             """ ;
-            sh:value rml:NonAssertedTriplesMap ;
+            sh:value rml:AssertedTriplesMap ;
         ]
     ) ;
 .
