@@ -29,7 +29,7 @@
             sh:path rml:quotedTriplesMap ;
             sh:name "quotedTriplesMap" ;
             sh:description """
-            An quoted TriplesMap element to generate a RDF-star triple as 
+            An Quoted Triples Map element to generate a RDF-star triple as 
             subject or object or another triple from a logical source record.
             """ ;
             sh:message """
@@ -38,6 +38,23 @@
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
+        ]
+        [
+            sh:targetObjectsOf rml:predicateObjectMap ;
+            sh:name "PredicateMap" ;
+            sh:message """
+            An Quoted Triples Map may never be used for generating a predicate.
+            """ ;
+            sh:xone (
+                [
+                    sh:path rml:predicate ;
+                    sh:minCount 1 ;
+                ] 
+                [
+                    sh:path rml:predicateMap ;
+                    sh:minCount 1 ;
+                ] 
+            );
         ]
     ) ;
 .
