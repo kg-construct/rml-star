@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>RML-star</title>
+    <title>RML-star: RDF-star in RML</title>
     <meta charset='utf-8'>
     <link rel="stylesheet" type="text/css" href="./resources/css/extras.css"/>
     <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
@@ -120,13 +120,13 @@
         // publishDate:  "2015-06-30",
         // if the specification's copyright date is a range of years, specify
         // the start date here:
-        copyrightStart: "2021",
+        copyrightStart: "2023",
         // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
         // and its maturity status
         // previousPublishDate: "2015-10-15",
         // previousMaturity: "FPWD",
         // if there a publicly available Editor's Draft, this is the link
-        edDraftURI: "https://w3id.org/kg-construct/rml-star",
+        edDraftURI: "https://w3id.org/rml/star/spec",
         // if this is a LCWD, uncomment and set the end of its review period
         // lcEnd: "2009-08-05",
         // editors, add as many as you like
@@ -135,16 +135,16 @@
           {
             name: "Ana Iglesias-Molina"
             , mailto: "ana.iglesiasm@upm.es"
-            , company: "Ontology Engineering Group &ndash;  Universidad Politécnica de Madrid",
+            , company: "Universidad Politécnica de Madrid",
             orcidid: "0000-0001-5375-8024",
-            companyURL: "https://oeg.fi.upm.es/"
+            companyURL: "https://upm.es/"
           },
           {
             name: "Julián Arenas-Guerrero"
             , mailto: "julian.arenas.guerrero@upm.es"
-            , company: "Ontology Engineering Group &ndash;  Universidad Politécnica de Madrid",
+            , company: "Universidad Politécnica de Madrid",
             orcidid: "0000-0002-3029-6469",
-            companyURL: "https://oeg.fi.upm.es/"
+            companyURL: "https://upm.es/"
           },
           {
             name: "Thomas Delva"
@@ -158,41 +158,41 @@
             , mailto: "anastasia.dimou@kuleuven.be"
             , company: "KU Leuven",
             orcidid: "0000-0003-2138-7972",
-            companyURL: "https://dtai.cs.kuleuven.be/"
+            companyURL: "https://kuleuven.be/"
           },
           {
             name: "David Chaves-Fraga"
             , mailto: "david.chaves@upm.es"
-            , company: "Ontology Engineering Group &ndash;  Universidad Politécnica de Madrid",
+            , company: "Universidad Politécnica de Madrid",
             orcidid: "0000-0003-3236-2789",
-            companyURL: "https://oeg.fi.upm.es/"
+            companyURL: "https://upm.es/"
           }
         ],
         // name of the WG, should be listed at https://respec.org/w3c/groups/
         group: "kg-construct",
         latestVersion: null,
-        issueBase: "https://github.com/kg-construct/rml-star-spec/issues",
+        issueBase: "https://github.com/kg-construct/rml-star/issues",
         noRecTrack: "true",
         otherLinks: [
           {
             key: "This Version",
             data: [{
-              value: "https://kg-construct.github.io/rml-star-spec/%thisDate%/",
-              href: "https://kg-construct.github.io/rml-star-spec/%thisDate%/"
+              value: "https://kg-construct.github.io/rml-star/%thisDate%/",
+              href: "https://kg-construct.github.io/rml-star/%thisDate%/"
             }]
           },
           {
             key: "Previous Version",
             data: [{
-              value: "https://kg-construct.github.io/rml-star-spec/%prevDate%/",
-              href: "https://kg-construct.github.io/rml-star-spec/%prevDate%/"
+              value: "https://kg-construct.github.io/rml-star/%prevDate%/",
+              href: "https://kg-construct.github.io/rml-star/%prevDate%/"
             }]
           },
           {
             key: "Website",
             data: [{
-              value: "https://rml.io/",
-              href: "https://rml.io/"
+              value: "https://w3id.org/rml/star/spec",
+              href: "https://w3id.org/rml/star/spec"
             }]
           }
         ],
@@ -207,22 +207,14 @@
         // !!!! IMPORTANT !!!! MAKE THE ABOVE BLINK IN YOUR HEAD
       };
     </script>
-    <!--TODO register the rml-star goatcounter-->
-    <script data-goatcounter="https://rml-star.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-    <noscript>
-        <img src="https://rml-star.goatcounter.com/count?p=/test-noscript">
-    </noscript>
+    
+    
+    
 </head>
 <body>
 <section id='abstract' data-include="section/abstract.md" data-include-format="markdown"></section>
 
-<section id='sotd'>
-    <p data-format="markdown">
-        This is an early draft,
-        yet efforts are made to keep things stable.
-    </p>
-</section>
+<section id="sotd" data-include="section/status.md" data-include-format="markdown" class="override"></section>
 
 <section data-include="section/overview.md" data-include-format="markdown"></section>
 
