@@ -2,10 +2,10 @@
 
 RML-star specification, SHACL shapes, ontology, and test cases.
 
-Specification: http://w3id.org/rml/star/spec
-Ontology: http://w3id.org/rml/star/
-SHACL shapes: http://w3id.org/rml/star/shapes
-Test-cases: [test-cases](./test-cases)
+- Specification: http://w3id.org/rml/star/spec
+- Ontology: http://w3id.org/rml/star/
+- SHACL shapes: http://w3id.org/rml/star/shapes
+- Test-cases: [test-cases](./test-cases)
 
 ## Specification
 
