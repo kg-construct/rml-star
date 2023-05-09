@@ -1,11 +1,11 @@
 ## Generating deeply nested quoted triples {#nested}
 
-It is possible to create more deeply nested RDF-star by using a [=quoted triples map=] that on its own turn also uses a quoted triples map.
+It is possible to create more deeply nested RDF-star by using a [=Quoted Triples Map=] that on its own turn also uses a Quoted Triples Map.
 
 Note: this process for generating deeply nested [=quoted triples=] is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
 
 <pre class="ex-input">
-# contents of logical source ex:PredictionsSource
+# contents of Logical Source ex:PredictionsSource
 entity,class,confidence,predictor
 Alice,Person,0.8,alpha
 Alice,Giraffe,1.0,alpha
@@ -14,40 +14,40 @@ Bobby,Giraffe,1.0,beta
 </pre>
 
 <pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
-# triples map that generates "type" triples
+# Triples Map that generates "type" triples
 <#innerTriplesMap>
   a rml:NonAssertedTriplesMap ;
   rml:logicalSource ex:PredictionsSource ;
   rml:subjectMap [
-    rr:template "http://example.com/{entity}"
+    rml:template "http://example.com/{entity}"
   ] ;
-  rr:predicateObjectMap [
-    rr:predicate rdf:type ;
-    rml:objectMap [ rr:template "http://example.com/{class}" ]
+  rml:predicateObjectMap [
+    rml:predicate rdf:type ;
+    rml:objectMap [ rml:template "http://example.com/{class}" ]
   ] .
 
-# triples map that generates "confidence" triples
+# Triples Map that generates "confidence" triples
 <#middleTriplesMap>
   a rml:NonAssertedTriplesMap ;
   rml:logicalSource ex:PredictionsSource ;
   rml:subjectMap [
     <b>rml:quotedTriplesMap <#innerTriplesMap></b>
   ] ;
-  rr:predicateObjectMap [
-    rr:predicate ex:confidence ;
+  rml:predicateObjectMap [
+    rml:predicate ex:confidence ;
     rml:objectMap [ rml:reference "confidence" ]
   ] .
 
-# triples map that generates "predicted by" triples
+# Triples Map that generates "predicted by" triples
 <#outerTriplesMap>
-  a rr:TriplesMap ;
+  a rml:TriplesMap ;
   rml:logicalSource ex:PredictionsSource ;
   rml:subjectMap [
     <b>rml:quotedTriplesMap <#middleTriplesMap></b>
   ] ;
-  rr:predicateObjectMap [
-    rr:predicate ex:predictedBy ;
-    rml:objectMap [ rr:template "http://example.com/{predictor}" ]
+  rml:predicateObjectMap [
+    rml:predicate ex:predictedBy ;
+    rml:objectMap [ rml:template "http://example.com/{predictor}" ]
   ] .
 </pre>
 
