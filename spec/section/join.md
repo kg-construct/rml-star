@@ -9,14 +9,14 @@ If a [=star map=] has a [join condition](https://rml.io/specs/rml/#join-conditio
 If the [logical source](https://rml.io/specs/rml/#logical-source) of Triples Map in which a [=star map=] occurs and the logical source of star map's [=Quoted Triples Map=] are not identical, then the star map must have at least one [join condition](https://rml.io/specs/rml/#join-condition).
 
 <pre class="ex-input">
-# contents of logical source ex:ClassesSource
+# Contents of logical source ex:ClassesSource
 entity , class
 Alice  , Person
 Bobby  , Dog
 </pre>
 
 <pre class="ex-input">
-# contents of logical source ex:ConfidencesSource
+# Contents of logical source ex:ConfidencesSource
 entity , confidence
 Alice  , 0.8
 Bobby  , 0.6
@@ -65,14 +65,14 @@ This is done by using a [=Quoted Triples Map=] which contains a [referencing obj
 Note: this process for generating [quoted triples](https://www.w3.org/2021/12/rdf-star.html#dfn-quoted) with a [referencing object map](https://rml.io/specs/rml/#referencing-object-map) is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
 
 <pre class="ex-input">
-# contents of logical source ex:ClassesSource
+# Contents of logical source ex:ClassesSource
 entity , class
 Alice  , Person
 Bobby  , Dog
 </pre>
 
 <pre class="ex-input">
-# contents of logical source ex:ConfidencesSource
+# Contents of logical source ex:ConfidencesSource
 entity , confidence
 Alice  , 0.8
 Bobby  , 0.6
