@@ -50,6 +50,6 @@ Class | Superclass
 
 All RML-star additions and changes to RML are shown in Figure 1:
 <figure>
-  <img src="./resources/images/rml-star_diagram.png" alt="Target structure" style="width:45%"/>
+  <img src="./resources/images/rml-star_diagram.png" alt="Target structure" style="width:75%"/>
   <figcaption>To enable the generation of RDF-star graphs, RML-star adds three classes and one object property to the RML ontology.</figcaption>
 </figure>
