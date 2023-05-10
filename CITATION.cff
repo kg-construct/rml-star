@@ -1,0 +1,16 @@
+title: "RML-star: Ontology, specification, shapes and test cases"
+license: CC-BY-4.0
+authors:
+  - family-names: Iglesias-Molina
+    given-names: Ana
+  - family-names: Arenas Guerrero
+    given-names: Julián
+  - family-names: Chaves-Fraga
+    given-names: David
+  - family-names: Dimou
+    given-names: Anastasia  
+cff-version: 1.0.0
+version: 0.1.0
+doi: 10.5281/zenodo.7919845
+date-released: 2023-05-10
+url: "https://w3id.org/rml/star"
