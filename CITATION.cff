@@ -9,6 +9,8 @@ authors:
     given-names: David
   - family-names: Dimou
     given-names: Anastasia  
+  - family-names: Van Assche
+    given-names: Dylan
 cff-version: 1.0.0
 version: 0.1.0
 doi: 10.5281/zenodo.7919845
