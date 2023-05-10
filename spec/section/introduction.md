@@ -23,9 +23,6 @@ The RDF Mapping Language (RML) [[RML]] is a language for expressing mappings bet
 
 This document describes RML-star: an extension of RML that enables the generation of RDF-star graphs with RML.
 
-### Conformance {#conformance}
-As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative. Everything else in this specification is normative.
-
 ### Conventions {#conventions}
 This document assumes that the reader is familiar with RDF, RML and RDF-star concepts.
 
