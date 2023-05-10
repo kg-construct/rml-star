@@ -13,42 +13,42 @@ Bobby,Dog,0.6,alpha
 Bobby,Giraffe,1.0,beta
 </pre>
 
-<pre class="ex-mapping nohighlight"><!-- nohighlight because otherwise the bolding is lost and we don't use highlighting anyway-->
+<pre class="ex-mapping nohighlight">
 # Triples Map that generates "type" triples
 <#innerTriplesMap>
-  a rml:NonAssertedTriplesMap ;
-  rml:logicalSource ex:PredictionsSource ;
-  rml:subjectMap [
-    rml:template "http://example.com/{entity}"
-  ] ;
-  rml:predicateObjectMap [
-    rml:predicate rdf:type ;
-    rml:objectMap [ rml:template "http://example.com/{class}" ]
-  ] .
+    a rml:NonAssertedTriplesMap;
+    rml:logicalSource ex:PredictionsSource;
+    rml:subjectMap [
+        rml:template "http://example.com/{entity}";
+    ];
+    rml:predicateObjectMap [
+        rml:predicate rdf:type;
+        rml:objectMap [ rml:template "http://example.com/{class}" ];
+    ].
 
 # Triples Map that generates "confidence" triples
 <#middleTriplesMap>
-  a rml:NonAssertedTriplesMap ;
-  rml:logicalSource ex:PredictionsSource ;
-  rml:subjectMap [
-    <b>rml:quotedTriplesMap <#innerTriplesMap></b>
-  ] ;
-  rml:predicateObjectMap [
-    rml:predicate ex:confidence ;
-    rml:objectMap [ rml:reference "confidence" ]
-  ] .
+    a rml:NonAssertedTriplesMap;
+    rml:logicalSource ex:PredictionsSource;
+    rml:subjectMap [
+        <b>rml:quotedTriplesMap <#innerTriplesMap>;</b>
+    ];
+    rml:predicateObjectMap [
+        rml:predicate ex:confidence;
+        rml:objectMap [ rml:reference "confidence" ];
+    ].
 
 # Triples Map that generates "predicted by" triples
 <#outerTriplesMap>
-  a rml:TriplesMap ;
-  rml:logicalSource ex:PredictionsSource ;
-  rml:subjectMap [
-    <b>rml:quotedTriplesMap <#middleTriplesMap></b>
-  ] ;
-  rml:predicateObjectMap [
-    rml:predicate ex:predictedBy ;
-    rml:objectMap [ rml:template "http://example.com/{predictor}" ]
-  ] .
+    a rml:AssertedTriplesMap;
+    rml:logicalSource ex:PredictionsSource;
+    rml:subjectMap [
+        <b>rml:quotedTriplesMap <#middleTriplesMap>;</b>
+    ];
+    rml:predicateObjectMap [
+        rml:predicate ex:predictedBy;
+        rml:objectMap [ rml:template "http://example.com/{predictor}" ];
+    ].
 </pre>
 
 <pre class="ex-output">

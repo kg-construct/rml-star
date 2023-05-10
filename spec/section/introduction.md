@@ -7,14 +7,14 @@
 RDF-star [[RDF-star]] is an extension of the Resource Description Framework (RDF) [[RDF11-Concepts]] that introduces a new kind of term, the [quoted triple](https://www.w3.org/2021/12/rdf-star.html#dfn-quoted), which can be referred from the subjects or objects of other triples. Triples that include a quoted triple are known as [RDF-star triples](https://w3c.github.io/rdf-star/cg-spec/editors_draft.html#dfn-triple).
 
 <pre class="ex-output">
-# This RDF-star example states that the triple ( :Alice a :Person ) is 80% likely to be true
+# The triple ( :Alice a :Person ) is 80% likely to be true
 << :Alice a :Person >> :confidence 0.8 .
 </pre>
 
-In RDF 1.1, an [asserted triple](https://www.w3.org/2021/12/rdf-star.html#dfn-asserted) ia an element of the set of triples that compose an [RDF graph](https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-graph). In RDF-star, a quoted triple can be asserted, if it is also included in the RDF graph, or not, if it only occurs as a quoted triple.
+In RDF 1.1, an [asserted triple](https://www.w3.org/2021/12/rdf-star.html#dfn-asserted) is an element of the set of triples that compose an [RDF graph](https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-graph). In RDF-star, a quoted triple can be asserted, if it is also included in the RDF graph, or not, if it only occurs as a quoted triple.
 
 <pre class="ex-output">
-# In this RDF-star example the triple ( :Alice a :Person ) is both, asserted and quoted
+# The triple ( :Alice a :Person ) is asserted and quoted
 < :Alice a :Person > .
 << :Alice a :Person >> :confidence 0.8 .
 </pre>
