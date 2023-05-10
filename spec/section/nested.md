@@ -2,15 +2,15 @@
 
 It is possible to create more deeply nested RDF-star by using a [=Quoted Triples Map=] that on its own turn also uses a Quoted Triples Map.
 
-Note: this process for generating deeply nested [=quoted triples=] is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
+Note: this process for generating deeply nested [quoted triples](https://www.w3.org/2021/12/rdf-star.html#dfn-quoted) is not different from the general process to create quoted triples [described earlier](#quoted), but we include this section for clarity.
 
 <pre class="ex-input">
 # contents of Logical Source ex:PredictionsSource
-entity,class,confidence,predictor
-Alice,Person,0.8,alpha
-Alice,Giraffe,1.0,alpha
-Bobby,Dog,0.6,alpha
-Bobby,Giraffe,1.0,beta
+entity , class   , confidence , predictor
+Alice  , Person  , 0.8        , alpha
+Alice  , Giraffe , 1.0        , alpha
+Bobby  , Dog     , 0.6        , alpha
+Bobby  , Giraffe , 1.0        , beta
 </pre>
 
 <pre class="ex-mapping nohighlight">
