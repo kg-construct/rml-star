@@ -1,21 +1,27 @@
-@prefix : <http://w3id.org/rml/star/> .
+@prefix : <http://w3id.org/rml/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://w3id.org/rml/star/> .
+@base <http://w3id.org/rml/> .
 
 <http://w3id.org/rml/star/> rdf:type owl:Ontology ;
+                             owl:versionIRI <http://w3id.org/rml/star> ;
                              <http://purl.org/dc/terms/contributor> "Ana Iglesias Molina" ,
-                                                                           "Anastasia Dimou" ,
-                                                                           "David Chaves Fraga" ,
-                                                                           "Julián Arenas Guerrero" ;
+                                                                    "Anastasia Dimou" ,
+                                                                    "David Chaves Fraga" ,
+                                                                    "Julián Arenas Guerrero" ;
+                             <http://purl.org/dc/terms/created> "2023-03-14" ;
                              <http://purl.org/dc/terms/description> "RML module for generating RDF-star graphs"@en ;
                              <http://purl.org/dc/terms/license> <http://purl.org/NET/rdflicense/cc-by4.0> ;
-                             <http://purl.org/dc/terms/modified> "2023-04-05" ;
+                             <http://purl.org/dc/terms/modified> "2023-06-15" ;
+                             <http://purl.org/dc/terms/publisher> <https://www.w3.org/community/kg-construct/> ;
                              <http://purl.org/dc/terms/title> "RML-star"@en ;
-                             <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/star/" .
+                             <http://purl.org/ontology/bibo/status> "draft" ;
+                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "rml" ;
+                             <http://purl.org/vocab/vann/preferredNamespaceUri> "http://w3id.org/rml/" ;
+                             owl:versionInfo "0.1.0" .
 
 #################################################################
 #    Annotation properties
@@ -27,6 +33,10 @@
 
 ###  http://purl.org/dc/terms/contributor
 <http://purl.org/dc/terms/contributor> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
 
 
 ###  http://purl.org/dc/terms/creator
@@ -57,6 +67,10 @@
 <http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/ontology/bibo/status
+<http://purl.org/ontology/bibo/status> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
 <http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
 
@@ -80,7 +94,11 @@
 ###  http://w3id.org/rml/quotedTriplesMap
 <http://w3id.org/rml/quotedTriplesMap> rdf:type owl:ObjectProperty ;
                                        rdfs:domain <http://w3id.org/rml/StarMap> ;
-                                       rdfs:range <http://w3id.org/rml/TriplesMap> ;
+                                       rdfs:range [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <http://w3id.org/rml/AssertedTriplesMap>
+                                                                  <http://w3id.org/rml/NonAssertedTriplesMap>
+                                                                )
+                                                  ] ;
                                        rdfs:comment "An quoted TriplesMap element to generate a RDF-star triple as subject or object or another triple from a logical source record."@en ;
                                        rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
                                        rdfs:label "quoted triples map" .

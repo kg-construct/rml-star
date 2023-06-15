@@ -4,16 +4,16 @@ This section provides details for each class and property defined by RML-star.
    <h3 id="classes-headline" class="list">Classes</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://w3id.org/rml/AssertedTriplesMap" title="http://w3id.org/rml/AssertedTriplesMap">Asserted Triples Map</a>
+         <a href="#AssertedTriplesMap" title="http://w3id.org/rml/AssertedTriplesMap">Asserted Triples Map</a>
       </li>
       <li>
-         <a href="#http://w3id.org/rml/NonAssertedTriplesMap" title="http://w3id.org/rml/NonAssertedTriplesMap">Non Asserted Triples Map</a>
+         <a href="#NonAssertedTriplesMap" title="http://w3id.org/rml/NonAssertedTriplesMap">Non Asserted Triples Map</a>
       </li>
       <li>
-         <a href="#http://w3id.org/rml/StarMap" title="http://w3id.org/rml/StarMap">Star Map</a>
+         <a href="#StarMap" title="http://w3id.org/rml/StarMap">Star Map</a>
       </li>
    </ul>
-   <div class="entity" id="http://w3id.org/rml/AssertedTriplesMap">
+   <div class="entity" id="AssertedTriplesMap">
       <h3>Asserted Triples Map<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
@@ -39,7 +39,7 @@ This section provides details for each class and property defined by RML-star.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://w3id.org/rml/NonAssertedTriplesMap">
+   <div class="entity" id="NonAssertedTriplesMap">
       <h3>Non Asserted Triples Map<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
@@ -65,7 +65,7 @@ This section provides details for each class and property defined by RML-star.
          </dd>
       </dl>
    </div>
-   <div class="entity" id="http://w3id.org/rml/StarMap">
+   <div class="entity" id="StarMap">
       <h3>Star Map<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
          </span>
@@ -84,7 +84,7 @@ This section provides details for each class and property defined by RML-star.
       <dl class="description">
          <dt>is in domain of</dt>
          <dd>
-            <a href="#http://w3id.org/rml/quotedTriplesMap" title="http://w3id.org/rml/quotedTriplesMap">quoted triples map</a>
+            <a href="#quotedTriplesMap" title="http://w3id.org/rml/quotedTriplesMap">quoted triples map</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
       </dl>
@@ -93,10 +93,10 @@ This section provides details for each class and property defined by RML-star.
    <h3 id="properties" class="list">Object Properties</h3>
    <ul class="hlist">
       <li>
-         <a href="#http://w3id.org/rml/quotedTriplesMap" title="http://w3id.org/rml/quotedTriplesMap">quoted triples map</a>
+         <a href="#quotedTriplesMap" title="http://w3id.org/rml/quotedTriplesMap">quoted triples map</a>
       </li>
    </ul>
-   <div class="entity" id="http://w3id.org/rml/quotedTriplesMap">
+   <div class="entity" id="quotedTriplesMap">
       <h3>quoted triples map<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
          </span>
@@ -116,14 +116,15 @@ This section provides details for each class and property defined by RML-star.
          <dl>
             <dt>has domain</dt>
             <dd>
-               <a href="#http://w3id.org/rml/StarMap" title="http://w3id.org/rml/StarMap">Star Map</a>
+               <a href="#StarMap" title="http://w3id.org/rml/StarMap">Star Map</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
             <dt>has range</dt>
             <dd>
-               <a href="http://w3id.org/rml/TriplesMap"
-                  target="_blank"
-                  title="http://w3id.org/rml/TriplesMap">triples map</a>
+               <a href="#AssertedTriplesMap" title="http://w3id.org/rml/AssertedTriplesMap">Asserted Triples Map</a>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">or</span> 
+               <a href="#NonAssertedTriplesMap" title="http://w3id.org/rml/NonAssertedTriplesMap">Non Asserted Triples Map</a>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
