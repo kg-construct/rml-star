@@ -441,21 +441,21 @@ var[data-type]:hover::after,var[data-type]:hover::before{opacity:1}
 <li>an input data source (as stated by the [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language">RML</a></cite>] specification).</li>
 </ul>
 <p>A <dfn data-lt="iri|base IRI" data-plurals="iris" id="dfn-iri" tabindex="0" aria-haspopup="dialog" data-dfn-type="dfn">base IRI</dfn> is used in resolving relative <a data-link-type="dfn|abstract-op" href="#dfn-iri" class="internalDFN" id="ref-for-dfn-iri-1">IRIs</a> produced by the <a data-link-type="dfn|abstract-op" href="#dfn-rml-star-mapping" class="internalDFN" id="ref-for-dfn-rml-star-mapping-1">RML-star mappings</a>. According to the [<cite><a class="bibref" data-link-type="biblio" href="#bib-r2rml" title="R2RML: RDB to RDF Mapping Language">R2RML</a></cite>] specification, the base IRI must be a valid [<cite><a class="bibref" data-link-type="biblio" href="#bib-iri" title="Internationalized Resource Identifiers (IRIs)">IRI</a></cite>]. It should not contain question mark (“?”) or hash (“#”) characters and should end in a slash (“/”) character.</p>
-<p>The RML-star vocabulary consists of the RML-star specific defined classes but also includes all the [<cite><a class="bibref" data-link-type="biblio" href="#bib-r2rml" title="R2RML: RDB to RDF Mapping Language">R2RML</a></cite>] and [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language">RML</a></cite>] classes.</p>
+<p>The RML-star vocabulary consists of the RML-star specific defined classes but also includes some [<cite><a class="bibref" data-link-type="biblio" href="#bib-rml" title="RDF Mapping Language">RML</a></cite>] classes.</p>
 <ul>
-<li><code>rml:TriplesMap</code> is the class of Triples Maps as defined by R2RML.</li>
+<li><code>rml:TriplesMap</code> is the class of Triples Maps as defined by RML-core.</li>
 <li><code>rml:AssertedTriplesMap</code> is the class of Triples Maps that are asserted.</li>
 <li><code>rml:NonAssertedTriplesMap</code> is the class of Triples Maps that are not asserted, but only quoted.</li>
-<li><code>rml:LogicalSource</code> is the class of logical sources as defined by RML.<ul>
-<li><code>rml:BaseSource</code> is the class of data sources used as input source as defined by RML. R2RML's <code>rml:BaseTableOrView</code> is a subclass of <code>rml:BaseSource</code>.</li>
+<li><code>rml:LogicalSource</code> is the class of logical sources as defined by RML-core.<ul>
 </ul>
 </li>
-<li><code>rml:TermMap</code> is the class of Term Maps, as defined by R2RML. It has four subclasses:<ul>
+<li><code>rml:TermMap</code> is the class of Term Maps, as defined by RML-core. It has the following subclasses:<ul>
 <li><code>rml:SubjectMap</code> is the class of Subject Maps.</li>
 <li><code>rml:PredicateMap</code> is the class of Predicate Maps.</li>
 <li><code>rml:ObjectMap</code> is the class of Object Maps.</li>
 <li><code>rml:GraphMap</code> is the class of graph maps.</li>
-<li><code>rml:LanguageMap</code> is the class of language maps as defined by RML.</li>
+<li><code>rml:LanguageMap</code> is the class of language maps as defined by RML-core.</li>
+<li><code>rml:DatatypeMap</code> is the class of datatype maps as defined by RML-core.</li>
 </ul>
 </li>
 <li><code>rml:StarMap</code> is the class of RDF-star Term Maps.</li>
@@ -478,7 +478,7 @@ This vocabulary involves three classes (<code>rml:StarMap</code>, <code>rml:Asse
 <tbody><tr>
 <td><code>rml:quotedTriplesMap</code></td>
 <td><code>rml:StarMap</code></td>
-<td><code>rml:TriplesMap</code></td>
+<td><code>rml:AssertedTriplesMap or rml:NonAssertedTriplesMap</code></td>
 </tr>
 </tbody></table>
 <table>

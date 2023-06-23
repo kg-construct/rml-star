@@ -15,19 +15,19 @@ An [=RML-star processor=] has access to one of the followings:
 
 A <dfn data-lt="iri">base IRI</dfn> is used in resolving relative [=IRIs=] produced by the [=RML-star mappings=]. According to the [[R2RML]] specification, the base IRI must be a valid [[IRI]]. It should not contain question mark (“?”) or hash (“#”) characters and should end in a slash (“/”) character.
 
-The RML-star vocabulary consists of the RML-star specific defined classes but also includes all the [[R2RML]] and [[RML]] classes.
+The RML-star vocabulary consists of the RML-star specific defined classes but also includes some [[RML]] classes.
 
-* `rml:TriplesMap` is the class of Triples Maps as defined by R2RML.
+* `rml:TriplesMap` is the class of Triples Maps as defined by RML-core.
 * `rml:AssertedTriplesMap` is the class of Triples Maps that are asserted.
 * `rml:NonAssertedTriplesMap` is the class of Triples Maps that are not asserted, but only quoted.
-* `rml:LogicalSource` is the class of logical sources as defined by RML.
-  * `rml:BaseSource` is the class of data sources used as input source as defined by RML. R2RML's `rml:BaseTableOrView` is a subclass of `rml:BaseSource`.
-* `rml:TermMap` is the class of Term Maps, as defined by R2RML. It has four subclasses:
+* `rml:LogicalSource` is the class of logical sources as defined by RML-core.
+* `rml:TermMap` is the class of Term Maps, as defined by RML-core. It has the following subclasses:
   * `rml:SubjectMap` is the class of Subject Maps.
   * `rml:PredicateMap` is the class of Predicate Maps.
   * `rml:ObjectMap` is the class of Object Maps.
   * `rml:GraphMap` is the class of graph maps.
-  * `rml:LanguageMap` is the class of language maps as defined by RML.
+  * `rml:LanguageMap` is the class of language maps as defined by RML-core.
+  * `rml:DatatypeMap` is the class of datatype maps as defined by RML-core.
 * `rml:StarMap` is the class of RDF-star Term Maps.
 * `rml:PredicateObjectMap` is the class of Predicate-Object Maps.
 * `rml:RefObjectMap` is the class of referencing Object Maps.
@@ -40,7 +40,7 @@ This vocabulary involves three classes (`rml:StarMap`, `rml:AssertedTriplesMap` 
 
 Property | Domain | Range
 -|-|-
-`rml:quotedTriplesMap` | `rml:StarMap` |  `rml:TriplesMap`
+`rml:quotedTriplesMap` | `rml:StarMap` |  `rml:AssertedTriplesMap or rml:NonAssertedTriplesMap`
 
 Class | Superclass
 - | -
