@@ -108,6 +108,7 @@ foaf:name rdf:type owl:AnnotationProperty .
                        rdfs:subClassOf :TriplesMap ;
                        rdfs:comment "A type of Triples Map that is quoted and asserted in the resulting graph."@en ;
                        rdfs:isDefinedBy <http://w3id.org/rml/star/> ;
+                       owl:disjointWith :NonAssertedTriplesMap ;
                        rdfs:label "Asserted Triples Map" .
 
 
