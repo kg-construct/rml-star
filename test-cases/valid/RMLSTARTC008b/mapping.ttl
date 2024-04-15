@@ -7,7 +7,9 @@
 
 :elementaryTM1 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data1.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data1.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -22,7 +24,9 @@
 
 :firstJoinTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data1.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data1.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -37,7 +41,9 @@
 
 :elementaryTM2 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data1.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data1.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -52,7 +58,9 @@
 
 :centralJoinTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data2.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data2.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -71,7 +79,9 @@
 
 :elementaryTM3 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data2.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data2.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -86,7 +96,9 @@
 
 :secondJoinTM a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data2.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data2.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -101,7 +113,9 @@
 
 :elementaryTM4 a rml:NonAssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data2.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data2.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [

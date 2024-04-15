@@ -7,7 +7,9 @@
 
 :firstTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -23,7 +25,9 @@
 
 :secondTM a rml:AssertedTriplesMap ;
     rml:logicalSource [
-        rml:source "data.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
