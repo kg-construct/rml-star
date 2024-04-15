@@ -7,7 +7,9 @@
 
 :firstTM a rml:NonAssertedTriplesMap ; # This refers to the y statement in the rdf-star
     rml:logicalSource [
-        rml:source "data1.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data1.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
@@ -22,7 +24,9 @@
 
 :secondTM a rml:AssertedTriplesMap ; # This refers to the x statement in the rdf-star
     rml:logicalSource [
-        rml:source "data2.csv";
+        rml:source [ a rml:Source, rml:RelativePathSource;
+            rml:path "data2.csv";
+        ];
         rml:referenceFormulation rml:CSV
     ];
     rml:subjectMap [
