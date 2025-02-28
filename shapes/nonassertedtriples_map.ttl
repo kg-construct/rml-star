@@ -1,8 +1,9 @@
 ###############################################################################
 # RML Non Asserted Triples Map shape                                          #
-# Copyright Dylan Van Assche, IDLab - UGent - imec (2023)                     #
+# Copyright Dylan Van Assche, IDLab - UGent - imec (2023 - 2025)              #
 ###############################################################################
 @prefix : <http://w3id.org/rml/shapes/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rml: <http://w3id.org/rml/> .
@@ -13,7 +14,7 @@
     a sh:NodeShape ;
     sh:targetClass rml:NonAssertedTriplesMap ;
     sh:message "NonAssertedTriplesMap" ;
-    sh:description """
+    rdfs:comment """
     Represents a Non Asserted Triples Map.
     """ ;
     sh:message """
